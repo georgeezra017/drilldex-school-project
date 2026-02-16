@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Runtime-generated local assets
+uploads/
+licenses/
+packZips/
+kitZips/
+downloads/
+zips/
+.DS_Store
