@@ -92,7 +92,7 @@ Rollen:
 ## 8. Opmerkingen (local-only)
 - Geen externe services vereist.
 - Bestanden en licenties worden lokaal opgeslagen.
-- Betaling is gesimuleerd voor offline beoordeling.
+- Betaling is gesimuleerd voor beoordeling.
 
 ## 9. Repository link
-Wordt toegevoegd zodra de publieke repo is aangemaakt.
+https://github.com/georgeezra017/drilldex-school-project

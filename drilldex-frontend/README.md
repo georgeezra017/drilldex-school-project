@@ -78,4 +78,4 @@ Frontend tests zijn handmatig via de UI. Backend tests worden uitgevoerd met JUn
 - Betalingen zijn gesimuleerd voor beoordeling.
 
 ## 10. Repository link
-Wordt toegevoegd zodra de publieke repo is aangemaakt.
+https://github.com/georgeezra017/drilldex-school-project
