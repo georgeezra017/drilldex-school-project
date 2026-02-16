@@ -1,0 +1,1933 @@
+{
+  "info": {
+    "name": "Drilldex API (Full Auto)",
+    "_postman_id": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "AdController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminAlbumController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminBeatController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminController",
+      "item": [
+        {
+          "name": "PUT /",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminImpersonationController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminKitController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminMediaController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminPackController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AdminUserController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "PUT /",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AlbumController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PUT /",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AuthController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BeatAdController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BeatController",
+      "item": [
+        {
+          "name": "POST /upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "upload"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ChatController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ChatStreamController",
+      "item": [
+        {
+          "name": "GET /stream",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/stream",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "stream"
+              ],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ChatThreadController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CheckoutController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FeedController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FollowController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GoogleAuthController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "InboxController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "KitController",
+      "item": [
+        {
+          "name": "POST /upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "upload"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "KitMeController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "LicenseController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MeController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "PATCH /bio",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bio",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bio"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "POST /avatar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/avatar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "avatar"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "POST /banner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/banner",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "banner"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "POST /profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "profile"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /username",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/username",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "username"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /email",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/email",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "email"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /password",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/password",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "password"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /profile",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "profile"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /beats/{id}",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/beats/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "beats",
+                "{id}"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /packs/{id}",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/packs/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "packs",
+                "{id}"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PATCH /kits/{id}",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/kits/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "kits",
+                "{id}"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "NotificationController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "GET /stream",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/stream",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "stream"
+              ],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PackController",
+      "item": [
+        {
+          "name": "POST /upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "upload"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "PUT /",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "PATCH /",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PaymentController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PayoutController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PreviewController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PromotionController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PurchaseController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SubscriptionController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "UserController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE /",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "WebhookController",
+      "item": [
+        {
+          "name": "POST /",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}
