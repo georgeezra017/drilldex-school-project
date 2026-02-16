@@ -1,0 +1,110 @@
+/* ===== Discover (floating under header) ===== */
+.discover { margin-bottom: 2rem; }
+
+.discover .discover__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.discover .discover__title { font-size: 1.2rem; font-weight: 700; }
+.discover .discover__link { font-size: .9rem; color: #009e94; }
+
+/* ---- Horizontal cards ---- */
+.discover .discover__track {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -12px;
+    padding: 0 12px 8px;
+}
+.discover .discover__track::-webkit-scrollbar { display: none; }
+
+.discover .discover__grid {
+    display: inline-flex;
+    gap: 18px;
+    scroll-snap-type: x mandatory;
+}
+
+.discover .discover__card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.discover .discover__cardBtn {
+    display: block;
+    width: 100%; height: 100%;
+    border: 0; padding: 0;
+    background: none; color: inherit;
+    position: relative;
+    cursor: pointer;
+}
+
+.discover .discover__cardBtn img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease, filter .25s ease;
+    filter: saturate(0.95);
+}
+.discover .discover__cardBtn:hover img,
+.discover .discover__cardBtn:focus-visible img {
+    transform: scale(1.05);
+    filter: saturate(1.05);
+}
+
+.discover .discover__overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding: .55rem .7rem;
+    background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.6) 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: .95rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+/* ---- Hashtag chips ---- */
+.discover .discover__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.discover .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 12px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+.discover .chip:hover {
+    background: #111;
+    border-color: #333;
+    transform: scale(0.98);
+}
+.discover .chip:active {
+    transform: translateY(1px);
+}
+.discover .chip:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #555, 0 0 0 4px #ff0055;
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 640px) {
+    .discover .discover__card { width: 160px; height: 160px; }
+    .discover .chip { height: 28px; font-size: .85rem; padding: 0 10px; }
+}

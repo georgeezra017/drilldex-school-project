@@ -1,0 +1,497 @@
+/* ─────────────────────────────
+   Sell — Base (desktop-first)
+   ───────────────────────────── */
+.sell {
+    --line: #1e1e1e;
+    --muted: #a9a9a9;
+    --panel: #0b0b0b;
+    --brand: #009e94;
+    --brand-dark: #007b73;
+    color: #fff;
+}
+
+/* Header */
+.sell__hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 24px 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.sell__title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -.01em;
+}
+
+.sell__sub {
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* Buttons */
+.sell__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.sell__btn--primary {
+    background: var(--brand);
+    color: #fff;
+}
+
+.sell__btn--primary:hover {
+    background: var(--brand-dark);
+}
+
+.sell__btn--ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: #eaeaea;
+}
+
+/* Toolbar (desktop default) */
+.sell__toolbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap; /* desktop: single row */
+}
+
+/* Desktop compact search */
+.sell .sell__toolbar > .search {
+    flex: 0 0 300px; /* single width strategy */
+    max-width: 100%;
+    height: 40px !important;
+    padding: 0.6rem 1rem;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    background: #1b1b1b !important;
+    border: 1px solid #262626 !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+}
+
+.sell .sell__toolbar > .search .search__input {
+    flex: 1 1 auto;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    line-height: 40px;
+    font-size: 1rem;
+
+}
+
+.sell .sell__toolbar > .search .search__icon {
+    width: 22px; height: 22px; /* match desktop size */
+    margin-left: 0.75rem;
+}
+
+/* Filters cluster */
+.sell__toolbarRight {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sell__segmented {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sell__segBtn {
+    background: #000;
+    color: #eaeaea;
+    padding: 8px 12px;
+    border: 0;
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+.sell__segBtn + .sell__segBtn {
+    border-left: 1px solid var(--line);
+}
+
+.sell__segBtn.is-active {
+    background: #111;
+    color: #fff;
+}
+
+.sell__sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 10px;
+    background: #1a1a1a;
+}
+
+.sell__sortIcon {
+    color: #fff;
+}
+
+.sell__sort select {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* Table */
+.sell__table {
+    max-width: 1400px;
+    margin: 8px auto 16px;
+    padding: 0 24px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #121212;
+
+;
+}
+
+.sell__tableHead {
+    border-bottom: 1px solid var(--line);
+
+}
+
+.sell__row {
+    display: grid;
+    grid-template-columns: 1.8fr 0.6fr 0.7fr 0.6fr 0.5fr 0.6fr 0.7fr 0.8fr auto;
+    gap: 16px;
+    padding: 12px;
+    align-items: center;
+}
+
+.sell__row--head {
+    color: #cfcfcf;
+    font-weight: 700;
+}
+
+.sell__col--song {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.sell__cover {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.sell__songMeta {
+    min-width: 0;
+    display: grid;
+    gap: 4px;
+}
+
+.sell__titleCell {
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sell__col--actions {
+    display: grid;
+    grid-template-columns:repeat(2, 42px);
+    grid-auto-rows: 42px;
+    gap: 10px 8px;
+    justify-self: end;
+    align-content: center;
+}
+
+/* Icon buttons */
+.sell__iconBtn {
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #1a1a1a;
+    border: 1px solid var(--line);
+    color: #eaeaea;
+}
+
+.sell__iconBtn:hover {
+    filter: brightness(1.05);
+}
+
+.sell__iconBtn--danger {
+    border-color: #3a1e1e;
+    color: #ffd5d5;
+    background: #180f0f;
+}
+
+/* Status pills */
+.sell__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: .82rem;
+    width: fit-content;
+    border: 1px solid #2a2a2a;
+    color: #ddd;
+    background: #0f0f0f;
+}
+
+.sell__status--published {
+    border-color: #009e94;
+    color: #009e94;
+    background: rgba(0, 158, 148, .12);
+}
+
+.sell__status--draft {
+    border-color: #333;
+    color: #777;
+    background: rgba(255, 255, 255, .02);
+}
+
+.sell__empty {
+    padding: 26px;
+    color: var(--muted);
+}
+
+/* Stats */
+.sell__statsBar {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    gap: 14px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    padding: 10px 18px;
+    border-radius: 14px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: white;
+
+}
+.sell__stat {
+    flex: 1;                        /* each takes equal width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    font-size: .75rem;/* prevent stat from forcing overflow */
+}
+
+.sell__statLabel {
+    color: #aaa;
+    font-size: .7rem;
+    line-height: 1;
+}
+
+.sell__statValue {
+    color: #fff;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Hide cards layout */
+.sell__cards {
+    display: none !important;
+}
+
+/* ─────────────────────────────
+   ≤ 1100px — wrap toolbar; search full‑width
+   ───────────────────────────── */
+@media (max-width: 1100px) {
+    .sell__hero {
+        padding: 60px 12px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .sell__title {
+        font-size: 1.6rem;
+        line-height: 1.1;
+    }
+
+    .sell__sub {
+        margin-top: 0;
+    }
+
+    .sell__head-right {
+        width: 100%;
+    }
+
+    .sell__btn--primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sell__toolbar {
+        padding: 0 16px 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .sell .sell__toolbar > .search {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        height: 40px !important;
+        padding: 0 10px !important;
+
+    }
+
+    .sell__toolbarRight {
+        width: 100%;
+        gap: 10px;
+        justify-content: stretch;
+        flex-wrap: wrap;
+    }
+
+    .sell__segmented {
+        display: flex;
+        width: 100%;
+    }
+
+    .sell__segmented .sell__segBtn {
+        flex: 0 0 auto;
+        min-width: 0;
+        justify-content: center;
+    }
+
+    .sell__segmented .sell__segBtn:nth-child(2) {
+        flex: 1 1 auto;
+    }
+
+    .sell__sort {
+        width: 100%;
+        justify-content: space-between;
+        padding: 8px 12px;
+    }
+
+    .sell__statsBar {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+/* Base badge */
+.sell__badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25em 0.7em;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-left: 0.4rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Beat badge — primary teal */
+.sell__badge--beat {
+    background-color: rgba(0, 158, 148, 0.15);
+    color: #009e94;
+    border: 1px solid #009e94;
+}
+.sell__badge--beat:hover {
+    background-color: rgba(0, 123, 115, 0.2);
+    color: #007b73;
+    border-color: #007b73;
+}
+
+/* Pack badge — accent teal (darker for contrast) */
+.sell__badge--pack {
+    background-color: rgba(0, 123, 115, 0.15);
+    color: #007b73;
+    border: 1px solid #007b73;
+}
+.sell__badge--pack:hover {
+    background-color: rgba(0, 158, 148, 0.2);
+    color: #009e94;
+    border-color: #009e94;
+}
+
+/* (Optional) Kit badge — neutral gray if you ever add another item type */
+.sell__badge--kit {
+    background-color: rgba(128, 128, 128, 0.15);
+    color: #888;
+    border: 1px solid #888;
+}
+.sell__badge--kit:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    color: #555;
+    border-color: #555;
+}
+
+/* ─────────────────────────────
+   ≤ 900px — enable horizontal table scroll
+   ───────────────────────────── */
+@media (max-width: 900px) {
+    .sell__table {
+        margin: 8px 0 100px;
+        padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+
+    .sell__tableHead, .sell__tableBody {
+        display: block;
+        min-width: 980px;
+        background: #121212;
+
+    }
+
+    .sell__row {
+        min-width: 980px;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .sell__cover {
+        width: 44px;
+        height: 44px;
+    }
+
+    .sell__col--actions {
+        grid-template-columns:repeat(2, 38px);
+        grid-auto-rows: 38px;
+    }
+
+    .sell__iconBtn {
+        width: 36px;
+        height: 36px;
+    }
+}
+

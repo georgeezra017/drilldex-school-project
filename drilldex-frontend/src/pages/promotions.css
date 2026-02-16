@@ -1,0 +1,621 @@
+/* Root */
+.promos {
+    color: #e0e0e0;
+}
+
+/* match trackpage text tone */
+.promos .promos__hero {
+    max-width: 1400px; /* same container width */
+    margin: 0 auto;
+    padding: 60px 12px 8px; /* same top rhythm */
+}
+
+.promos .promos__sub {
+    color: #bdbdbd;
+    margin-top: 6px;
+}
+
+/* Toggles (Beats/Packs/Kits) */
+.promos .promos__toggles {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+}
+
+.promos .promos__toggle {
+    background: #121212; /* card gray */
+    border: 1px solid #1e1e1e; /* subtle border */
+    color: #d6d6d6;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .08s ease;
+}
+
+.promos .promos__toggle:hover {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+.promos .promos__toggle.is-active {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+    color: #00c0b3;
+}
+
+/* Main two-column */
+.promos .promos__main {
+    max-width: 1400px;
+    margin: 12px auto 120px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: 1fr 360px; /* mirror trackpage */
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .promos .promos__main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left column states */
+.promos .promos__left .promos__loading,
+.promos .promos__empty {
+    background: #121212; /* card gray */
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    padding: 18px;
+    color: #ddd;
+}
+
+.promos .promos__empty a {
+    color: #00c0b3;
+}
+
+/* Item picker (card) */
+.promos .picker {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    padding: 18px;
+    margin-bottom: 14px;
+}
+
+.promos .picker__title {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.promos .picker__empty {
+    color: #bdbdbd;
+}
+
+.promos .picker__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* even smaller cards */
+    gap: 12px; /* space between cards */
+}
+
+.promos .pick {
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1a1a1a;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .08s ease;
+}
+
+.promos .pick:hover {
+    background: #1e1e1e;
+    border-color: #3a3a3a;
+    transform: translateY(-1px);
+}
+
+.promos .pick.is-selected {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .2) inset;
+}
+
+.promos .pick__btn {
+    all: unset;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.promos .pick__imgWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #111;
+}
+
+.promos .pick__imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.promos .pick__imgPh {
+    width: 100%;
+    height: 100%;
+    background: #121212;
+}
+
+.promos .pick__check {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: #009e94;
+    color: #000;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.promos .pick.is-selected .pick__check {
+    display: inline-flex;
+}
+
+.promos .pick__meta {
+    padding: 8px;
+    display: grid;
+    gap: 4px;
+}
+
+.promos .pick__title {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.promos .pick__price {
+    color: #bdbdbd;
+    font-size: .9rem;
+}
+
+/* Right column cards */
+.promos .card {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    padding: 18px;
+}
+
+.promos .card + .card {
+    margin-top: 14px;
+}
+
+.promos .card__title {
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+/* Form rows */
+.promos .row {
+    margin-bottom: 14px;
+}
+
+.promos .label {
+    color: #cfcfcf;
+    margin-bottom: 6px;
+
+}
+
+
+.promos .chips {
+    display: flex;
+    flex-wrap: nowrap;  /* keep everything on one line */
+    gap: 6px;           /* slightly less spacing */
+}
+
+.promos .chip {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    color: #d6d6d6;
+    padding: 6px 10px;   /* smaller padding */
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;   /* smaller font */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .05s ease;
+}
+
+.promos .chip:hover {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+}
+
+.promos .chip.is-active {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+    color: #00c0b3;
+}
+
+/* Tier cards */
+.promos .tiers {
+    display: grid;
+    gap: 10px;
+}
+
+/* fixed the missing dot in original 'promos .tiers' */
+.promos .tier {
+    text-align: left;
+    border: 1px solid #2a2a2a;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.promos .tier:hover {
+    background: #1e1e1e;
+    border-color: #3a3a3a;
+}
+
+.promos .tier.is-active {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15) inset;
+}
+
+.promos .tier__name {
+    font-weight: 800;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.promos .tier__desc {
+    color: #bdbdbd;
+    margin-top: 2px;
+}
+
+.promos .tier__rate {
+    color: #00c0b3;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+/* Summary */
+.promos .sumrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    color: #ddd;
+    border-bottom: 1px dashed #1f1f1f;
+}
+
+.promos .sumrow:last-child {
+    border-bottom: 0;
+}
+
+.promos .sumrow--total {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* CTA buttons */
+.promos .promos__cta {
+    width: 100%;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, transform .08s ease;
+}
+
+.promos .promos__cta:hover:not(:disabled) {
+    background: #007b73;
+}
+
+.promos .promos__cta:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.promos .promos__cta:disabled {
+    background: #063c39;
+    color: #87d8d2;
+    cursor: not-allowed;
+}
+
+.promos .promos__ghost {
+    width: 100%;
+    margin-top: 8px;
+    background: #121212;
+    color: #ddd;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.promos .promos__ghost:hover {
+    background: #161616;
+    border-color: #2a2a2a;
+}
+
+.tier__desc {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.tier__desc li {
+    margin-bottom: 0.3rem;
+    list-style-type: disc; /* or use a custom icon */
+}
+
+/* ===========================
+   Promotions Page - Right Panel
+   =========================== */
+.promos__right {
+    flex: 0 0 400px;           /* slightly wider than left */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cards inside right panel */
+.promos__right .card {
+    background: #121212;       /* same as left panel */
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card title */
+.promos__right .card__title {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+/* Row inside card */
+.promos__right .row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Row labels */
+.promos__right .label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #cfcfcf;
+}
+
+/* Chips (duration buttons) */
+.promos__right .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;          /* moderate spacing */
+}
+
+.promos__right .chip {
+    background: #1a1a1a;   /* keep same background */
+    border: 1px solid #2a2a2a;
+    color: #d6d6d6;
+    padding: 10px 16px;     /* slightly bigger than original but smaller than 10/16 */
+    border-radius: 7px;    /* moderate rounding */
+    font-weight: 600;
+    font-size: 0.95rem;    /* slightly bigger than original 0.9rem */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.promos__right .chip:hover {
+    background: #1e1e1e;
+    border-color: #3a3a3a;
+}
+
+.promos__right .chip.is-active {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0,158,148,.15);
+    color: #00c0b3;
+}
+
+/* Tier buttons */
+.promos__right .tiers {
+    display: grid;
+    gap: 10px;
+}
+
+.promos__right .tier {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.promos__right .tier:hover {
+    background: #1e1e1e;
+    border-color: #3a3a3a;
+}
+
+.promos__right .tier.is-active {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0,158,148,.15) inset;
+}
+
+.promos__right .tier__name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.promos__right .tier__desc {
+    color: #bdbdbd;
+    margin-top: 0.3rem;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.promos__right .tier__rate {
+    font-weight: 700;
+    color: #00c0b3;
+    font-size: 0.9rem;
+}
+
+/* Summary rows */
+.promos__right .sumrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+    border-bottom: 1px dashed #1f1f1f;
+    padding: 6px 0;
+}
+
+.promos__right .sumrow:last-child {
+    border-bottom: none;
+}
+
+.promos__right .sumrow--total {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+/* CTA button */
+.promos__right .promos__cta {
+    width: 100%;
+    margin-top: 12px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, transform .08s ease;
+}
+
+.promos__right .promos__cta:hover:not(:disabled) {
+    background: #007b73;
+}
+
+.promos__right .promos__cta:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.promos__right .promos__cta:disabled {
+    background: #063c39;
+    color: #87d8d2;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .promos__right {
+        flex: 0 0 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promos__main {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .promos__right {
+        flex: 1 0 auto;
+    }
+}
+
+/* Main two-column layout */
+.promos .promos__main {
+    max-width: 1400px;
+    margin: 12px auto 120px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: 1.2fr 420px; /* left flexible, right slightly wider */
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .promos .promos__main {
+        grid-template-columns: 1fr; /* stack columns on smaller screens */
+    }
+}
+
+/* Right panel width (optional for more precision) */
+.promos__right {
+    flex: 0 0 420px; /* slightly wider than left */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .promos__right {
+        flex: 0 0 360px; /* fallback width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .promos__main {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .promos__right {
+        flex: 1 0 auto; /* full width on mobile */
+    }
+}
+
+/*latest update*/
+.promos .pick__meta {
+    padding: 4px;
+    display: grid;
+    gap: 2px;
+}
+
+.promos .pick__title {
+    font-size: 0.8rem;
+}
+
+.promos .pick__price {
+    font-size: 0.75rem;
+}

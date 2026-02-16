@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        elementFormDefault="qualified">
+
+    <xsd:simpleType name="changefreqType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="always"/>
+            <xsd:enumeration value="hourly"/>
+            <xsd:enumeration value="daily"/>
+            <xsd:enumeration value="weekly"/>
+            <xsd:enumeration value="monthly"/>
+            <xsd:enumeration value="yearly"/>
+            <xsd:enumeration value="never"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="priorityType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0.0"/>
+            <xsd:maxInclusive value="1.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="urlset">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="url" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="url">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="loc" type="xsd:anyURI"/>
+                <xsd:element name="lastmod" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="changefreq" type="changefreqType" minOccurs="0"/>
+                <xsd:element name="priority" type="priorityType" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

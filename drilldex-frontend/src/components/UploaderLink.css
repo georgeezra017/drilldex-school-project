@@ -1,0 +1,16 @@
+.clickable-username {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: text-decoration 0.2s;
+
+}
+
+.clickable-username:hover {
+    text-decoration: underline;
+}
+
+.clickable-username.no-underline {
+    text-decoration: none;
+    cursor: default; /* optional: remove pointer if you really don't want click behavior */
+}

@@ -1,0 +1,126 @@
+/* share-modal.css */
+.shareModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.shareModal {
+    width: min(680px, 92vw);
+    background: #151515;
+    color: #fff;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+
+.shareModal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.shareModal__close {
+    background: none;
+    border: 0;
+    color: #aaa;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.shareModal__track {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 8px 0 16px;
+}
+
+.shareModal__track img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.shareModal__title {
+    font-weight: 700;
+}
+
+.shareModal__artist {
+    opacity: .75;
+    margin-top: 2px;
+}
+
+.shareModal__block {
+    margin: 14px 0;
+}
+
+.shareModal__label {
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: #aeb3b7;
+    margin-bottom: 6px;
+}
+
+.shareModal__row {
+    display: flex;
+    gap: 8px;
+}
+
+.shareModal__row input,
+.shareModal__row textarea {
+    flex: 1;
+    background: #0f0f0f;
+    color: #e7e9ea;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.shareModal__row button {
+    white-space: nowrap;
+    background: #232323;
+    border: 1px solid #333;
+    color: #e7e9ea;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+
+}
+
+.shareModal__row button:hover {
+    background: #2b2b2b;
+}
+
+.shareModal__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.shareModal__pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #232323;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.shareModal__pill:hover {
+    background: #2b2b2b;
+}
+
+.shareModal__pill svg {
+    fill: currentColor;
+}

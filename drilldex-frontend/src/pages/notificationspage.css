@@ -1,0 +1,164 @@
+/* src/pages/notificationspage.css */
+
+/* Page wrapper */
+.notificationspage {
+    background: #000;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 60px 12px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Inner container */
+.notificationspage__inner {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Card container */
+.np-card {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card header: title + Mark All */
+.np-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allows button to drop below on small screens */
+    gap: 8px;       /* spacing if wrapped */
+}
+
+/* Page title */
+.np-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+/* "Mark All as Read" Button */
+.np-sendbtn {
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.08s ease;
+}
+
+.np-sendbtn:hover {
+    background: #007b73;
+}
+
+.np-sendbtn:active {
+    transform: scale(0.97);
+}
+
+/* Notification list */
+.np-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Single notification item */
+.np-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 12px 16px;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.np-item:hover {
+    background: #222;
+    border-color: #3a3a3a;
+}
+
+/* Unread notification accent */
+.np-item.unread {
+    border-left: 4px solid #009e94;
+}
+
+/* Notification meta */
+.np-meta {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.np-title-item {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.np-message {
+    font-size: 0.9rem;
+    color: #cfcfcf;
+    overflow: hidden;
+}
+
+/* Actions column (Delete button) */
+.np-actions {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 8px;
+}
+
+.np-actions .np-sendbtn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* Responsive: wrap header if narrow */
+@media (max-width: 400px) {
+    .np-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .np-sendbtn {
+        width: 100%;
+    }
+}
+
+/* Actions column (Delete button) */
+.np-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start; /* keep top alignment so multiple buttons stack correctly if needed */
+}
+
+/* Delete button */
+.np-actions .np-sendbtn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    margin-top: 6px; /* push button slightly lower */
+}

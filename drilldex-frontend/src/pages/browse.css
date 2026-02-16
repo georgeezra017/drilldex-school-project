@@ -1,0 +1,880 @@
+/* base */
+.browse {
+    --panel: #0b0b0b;
+    --line: #222;
+    --muted: #a9a9a9;
+    --chip: #101010;
+    --chip-line: #1f1f1f;
+    --brand: #009e94;
+    color: #fff;
+}
+
+.browse .browse-hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 12px 0;
+}
+
+.browse .chevron-icon {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.browse .browse-hero__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.browse .browse-hero h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -.01em;
+}
+
+.browse .browse-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: #000;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.browse .browse-sort select {
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
+
+.browse .moremenu {
+    position: relative; /* <- anchor for the panel */
+    display: inline-block;
+}
+
+.browse .moremenu__panel {
+    position: absolute;
+    top: calc(100% + 8px); /* directly below the kebab */
+    right: 0; /* align to the button’s right edge */
+    left: auto; /* ensure left isn’t also set */
+    z-index: 80;
+}
+
+
+.browse .searchbar {
+    position: relative;
+    flex: 1;
+}
+
+.browse .search__icon {
+    width: 22px;
+    height: 22px;
+    margin-left: 0.75rem;
+    stroke: currentColor;
+}
+
+
+.browse .sort-select {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 6px 10px;
+    gap: 6px;
+    position: relative;
+}
+
+.browse .sort-icon {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.browse .sort-select select {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 18px;
+}
+
+.browse .search-icon {
+    position: relative;
+    left: 34px;
+    transform: translateY(1px);
+    pointer-events: none;
+}
+
+.browse .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: #000;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.browse .quick-chips {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.browse .quick-chips::-webkit-scrollbar {
+    display: none;
+}
+
+.browse .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 12px;
+    background: #000;
+    border: 1px solid #222;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.browse .chip svg {
+    margin-right: 6px;
+    font-size: 1rem;
+}
+
+.browse .chip.is-active {
+    border-color: var(--brand);
+    background: #111;
+}
+
+
+.browse .beat__body {
+    flex: 1;
+    background: #121212;
+}
+
+.browse .beat__actions {
+    position: static;
+    margin-left: auto;
+}
+
+.browse .more-actions-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #999;
+}
+
+.browse .more-actions-btn:hover {
+    color: #007b73;
+}
+
+
+.browse .moremenu__item:hover {
+    background: #101010;
+}
+
+.browse .moremenu__item:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* layout */
+.browse .browse-layout {
+    max-width: 1400px;
+    margin: 12px auto 120px;
+    padding: 0px 12px 0;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+}
+
+
+@media (max-width: 960px) {
+    .browse .browse-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* filters */
+.browse .filters {
+    background: #000;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    position: sticky;
+    top: 12px;
+    height: max-content;
+}
+
+.browse .filters__group {
+    margin-bottom: 16px;
+}
+
+.browse .filters__title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.browse .filters__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.browse .chip--small {
+    padding: 6px 10px;
+    font-size: .9rem;
+}
+
+.browse .range {
+    padding: 6px 2px;
+}
+
+.browse .range input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 6px;
+    background: #1b1b1b;
+    border-radius: 999px;
+    outline: none;
+    margin: 10px 0;
+}
+
+.browse .range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.browse .range__labels {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.browse .filters__clear {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #0e0e0e;
+    color: #eee;
+}
+
+/* results */
+.browse .results__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.browse .meta-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.browse .meta-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.browse .beat-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+@media (max-width: 1200px) {
+    .browse .beat-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 780px) {
+    .browse .beat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .browse .beat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.browse .beat {
+    background: #000;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: visible;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.browse .beat__play {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.browse .beat:hover {
+    transform: translateY(-3px);
+    border-color: #2b2b2b;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+}
+
+.browse .beat__thumb {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: #0e0e0e;
+    overflow: hidden;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.browse .beat__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.browse .beat__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, .0);
+    opacity: 0;
+    transition: opacity .15s ease, background .15s ease;
+    color: #fff;
+}
+
+.browse .beat:hover .beat__play {
+    opacity: 1;
+    background: rgba(0, 0, 0, .35);
+}
+
+.browse .beat__play svg {
+    width: 40px;
+    height: 40px;
+}
+
+.browse .beat__body {
+    padding: 10px 12px 12px;
+    display: grid;
+    gap: 4px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+
+.browse .beat__sub {
+    color: var(--muted);
+    font-size: .92rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.browse .beat__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.browse .beat__meta .price {
+    margin-left: auto;
+    color: #fff;
+    font-weight: 800;
+}
+
+.browse .beat__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+/* Portal version */
+
+
+/* search box */
+.browse .search {
+    display: flex;
+    align-items: center;
+    background: #1b1b1b;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.browse .search__input {
+    background: none;
+    border: none;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    flex: 1;
+}
+
+
+.browse .price-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.browse .price-btn:hover {
+    background: #007b73;
+}
+
+.browse .filters__toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (min-width: 961px) {
+    .browse .filters__toggle {
+        display: none;
+    }
+}
+
+.browse .filters__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (min-width: 961px) {
+    .browse .filters__close {
+        display: none;
+    }
+}
+
+/* mobile filters */
+@media (max-width: 960px) {
+    .browse .filters {
+        display: none !important;
+    }
+
+    .browse .filters.is-open {
+        display: block !important;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 16px;
+        overflow: auto;
+        background: #000;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        z-index: 2000;
+    }
+
+    .browse .filters__backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .45);
+        backdrop-filter: blur(2px);
+        z-index: 1500;
+    }
+}
+
+/* desktop filters */
+@media (min-width: 961px) {
+    .browse .filters {
+        display: block !important;
+        position: sticky;
+        top: 12px;
+        border-radius: 14px;
+        height: max-content;
+        box-shadow: none;
+    }
+}
+
+.beat__artist {
+    font-weight: 700;
+    color: #ddd;
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.beat__metaRow {
+    display: flex;
+    flex-wrap: wrap; /* ✅ allows wrapping */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    gap: 6px; /* ✅ optional, gives breathing room when wrapping */
+}
+
+.beat__sub {
+    font-size: 0.85rem;
+    color: #aaa;
+    flex: 1 1 auto; /* ✅ lets genre/meta shrink/grow and wrap */
+    min-width: 150px; /* ✅ ensures it doesn’t collapse too small */
+}
+
+/* ensure grid doesn't clip */
+.browse .beat-grid {
+    overflow: visible;
+}
+
+/* baseline + keep card on top while menu is open */
+.browse .beat {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+}
+
+.browse .beat:hover,
+.browse .beat.is-menu-open {
+    z-index: 50;
+}
+
+/* dropdown above the card */
+.browse .moremenu {
+    position: relative;
+}
+
+.browse .moremenu__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    z-index: 100;
+}
+
+/* Empty state for BrowsePage */
+.browse-empty {
+    padding: 60px 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Optional: icon style if you add an SVG/emoji inside */
+.browse .browse-empty svg,
+.browse .browse-empty .icon {
+    display: block;
+    margin: 0 auto 12px;
+    font-size: 2rem;
+    color: #666;
+}
+
+/* Base badge */
+.browse .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25em 0.7em;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-left: 0.4rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Beat badge — primary teal */
+.browse .badge--beat {
+    background-color: rgba(0, 158, 148, 0.15);
+    color: #009e94;
+    border: 1px solid #009e94;
+}
+
+.browse .badge--beat:hover {
+    background-color: rgba(0, 123, 115, 0.2);
+    color: #007b73;
+    border-color: #007b73;
+}
+
+/* Pack badge — accent teal */
+.browse .badge--pack {
+    background-color: rgba(0, 123, 115, 0.15);
+    color: #007b73;
+    border: 1px solid #007b73;
+}
+
+.browse .badge--pack:hover {
+    background-color: rgba(0, 158, 148, 0.2);
+    color: #009e94;
+    border-color: #009e94;
+}
+
+/* Kit badge — neutral gray so it stands out less */
+.browse .badge--kit {
+    background-color: rgba(128, 128, 128, 0.15);
+    color: #888;
+    border: 1px solid #888;
+}
+
+.browse .badge--kit:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    color: #555;
+    border-color: #555;
+}
+
+/* Scoped tags for BrowsePage only */
+.browse .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    margin-right: 6px;
+    padding: 0 10px;
+    border-radius: 6px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.browse .tag:hover {
+    transform: scale(0.96);
+}
+
+/* --- Colored variants --- */
+.browse .tag--new {
+    border-color: #009e94;
+    background: rgba(0, 158, 148, 0.15);
+    color: #009e94;
+}
+
+.browse .tag--popular {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+}
+
+.browse .tag--trending {
+    border-color: #9b59b6;
+    background: rgba(155, 89, 182, 0.15);
+    color: #9b59b6;
+}
+
+.browse .tag--featured {
+    border-color: #f2c94c;
+    background: rgba(242, 201, 76, 0.18);
+    color: #f2c94c;
+}
+
+.browse .beat__title .tag {
+    margin-left: 2px;
+
+}
+
+/* Beat title row with scroll */
+.browse .beat__title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    max-width: 360px;
+    overflow-x: auto; /* ✅ enable horizontal scrolling */
+    white-space: nowrap; /* ✅ prevent wrapping */
+    -ms-overflow-style: none; /* hide scrollbar in IE/Edge */
+    scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+.browse .beat__title::-webkit-scrollbar {
+    display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+/* Title text still truncates */
+.browse .beat__titleText {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 1; /* ✅ let text shrink */
+}
+
+/* Pills don’t shrink or wrap */
+.browse .badge,
+.browse .tag {
+    flex-shrink: 0; /* ✅ keep full size */
+    white-space: nowrap;
+}
+
+/* make every <li.beat> fill its grid cell */
+.browse .beat-grid {
+    align-items: stretch;
+}
+
+/* grid rows can stretch items */
+.browse .beat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* keep the thumb fixed height, the body takes the rest */
+.browse .beat__thumb {
+    flex: 0 0 auto;
+    aspect-ratio: 16/10;
+}
+
+.browse .beat__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* push genre/tags/price to the bottom */
+.browse .beat__metaRow {
+    margin-top: auto;
+}
+
+/* nicer alignment for title + badges + tag */
+.browse .beat__header {
+    align-items: flex-start;
+}
+
+.browse .beat__title {
+    align-items: baseline;
+}
+
+/* baseline fixes pill vertical offset */
+
+/* ensure the price button spans, but doesn't grow the row */
+.browse .price-btn {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.browse .beat-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease;
+    color: #fff;
+    pointer-events: none;
+}
+
+.browse .beat__thumb:hover .beat-card__overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+}
+
+.browse .beat-card__overlay svg {
+    width: 42px;
+    height: 42px;
+}
+
+.beat__metaRow {
+    display: flex;
+    flex-direction: column; /* stack sub-info and tags vertically */
+    align-items: flex-start; /* left-align everything */
+}
+
+.browse .beat__metaRow {
+    overflow: hidden;          /* ⬅️ keeps tags inside the card */
+    width: 100%;
+}
+
+/* 2) Horizontal scrolling *inside* the meta row for tags only */
+.browse .beat__tags {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;          /* ⬅️ scroll instead of wrap/overflow */
+    gap: 2px;
+    max-width: 100%;
+    padding-bottom: 2px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.browse .beat__tags::-webkit-scrollbar { display: none; }
+.browse .beat__tags .tag {
+    flex: 0 0 auto;            /* ⬅️ keep tag pills intact */
+    white-space: nowrap;
+}
+
+/* 3) Ensure the title/subline can truncate and not push tags out */
+.browse .beat__sub {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;       /* ✅ enables side scroll */
+    text-overflow: unset;   /* ✅ no more “...” */
+    -ms-overflow-style: none;  /* hide scrollbar (IE/Edge) */
+    scrollbar-width: none;     /* hide scrollbar (Firefox) */
+    max-width: 100%;
+}
+
+/* hide Chrome/Safari scrollbar */
+.browse .beat__sub::-webkit-scrollbar {
+    display: none;
+}
+
+

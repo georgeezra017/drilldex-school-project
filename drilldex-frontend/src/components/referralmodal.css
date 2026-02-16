@@ -1,0 +1,88 @@
+/* referralmodal.css */
+.referralModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.referralModal {
+    width: min(680px, 92vw);
+    background: #151515;
+    color: #fff;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.referralModal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.referralModal__close {
+    background: none;
+    border: 0;
+    color: #aaa;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.referralModal__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.referralModal__desc {
+    opacity: 0.75;
+    margin-top: 2px;
+    margin-bottom: 16px;
+}
+
+.referralModal__row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.referralModal__row input {
+    flex: 1;
+    background: #0f0f0f;
+    color: #e7e9ea;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.referralModal__row button {
+    white-space: nowrap;
+    background: #009e94;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.referralModal__row button:hover {
+    background: #2b2b2b;
+}
+
+.referralModal__stats {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #e7e9ea;
+    opacity: 0.85;
+}
+
+.referralModal__stats p {
+    margin: 4px 0;
+}

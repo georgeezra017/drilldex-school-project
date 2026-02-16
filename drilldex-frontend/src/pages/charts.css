@@ -1,0 +1,499 @@
+/* Container + header */
+.charts {
+    color: #fff;
+}
+
+.charts .charts__hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 12px 0;
+}
+
+.charts .charts__sub {
+    color: #bdbdbd;
+    margin-top: 6px;
+}
+
+.charts .charts__filters {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+}
+
+.charts .charts__filter {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #ccc;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+
+.charts .charts__filter.all.is-active,
+.charts .charts__filter.new.is-active {
+    border-color: #009e94;
+    background: rgba(0, 158, 148, 0.15);
+    color: #009e94;
+}
+
+.charts .charts__filter.popular.is-active {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+}
+
+.charts .charts__filter.trending.is-active {
+    border-color: #9b59b6;
+    background: rgba(155, 89, 182, 0.15);
+    color: #9b59b6;
+}
+
+.charts .charts__main {
+    max-width: 1400px;
+    margin: 12px auto 120px;
+    padding: 0 12px 0;
+}
+
+.charts .results__meta1 {
+    color: #fff;
+}
+
+/* Feed rows */
+.charts .charts__feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.charts .chartrow {
+    display: grid;
+    grid-template-columns: 32px 84px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.charts .rank {
+    font-weight: 800;
+    color: #bdbdbd;
+    text-align: center;
+}
+
+.charts .coverWrap {
+    width: 84px;
+    height: 84px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.charts .coverWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.charts .meta {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.charts .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.charts .title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Board pills */
+.charts .boardpill {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+    text-transform: capitalize;
+}
+
+.charts .boardpill--new {
+    border-color: #009e94; /* teal but darker, sharper */
+    background-color: rgba(26, 188, 156, 0.15);
+    color: #009e94;
+}
+
+.charts .boardpill--popular {
+    border-color: #d35400; /* deeper orange, less playful */
+    background-color: rgba(211, 84, 0, 0.15);
+    color: #d35400;
+}
+
+.charts .boardpill--trending {
+    border-color: #8e44ad; /* darker purple, more aggressive */
+    background-color: rgba(142, 68, 173, 0.15);
+    color: #8e44ad;
+}
+
+.charts .sub {
+    color: #9aa;
+    font-size: .92rem;
+    white-space: normal; /* allow wrapping */
+    overflow: hidden; /* hide accidental overflow */
+    text-overflow: ellipsis;
+    line-height: 1.3; /* a bit of breathing room */
+}
+
+.charts .tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.charts .tag {
+    padding: 6px 10px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    background: #1a1a1a;
+    color: #ddd;
+    font-size: .9rem;
+}
+
+.charts .tag:hover {
+    background: #111;
+    border-color: #333;
+    transform: scale(0.98);
+}
+
+/* right side */
+.charts .stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.charts .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #222;
+    background: #1a1a1a;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #ddd;
+}
+
+.charts .price {
+    font-weight: 800;
+    color: #e9e9e9;
+    margin-left: 6px;
+}
+
+/* actions */
+.charts .more-actions-btn {
+    background: none;
+    border: none;
+    color: #999;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.charts .more-actions-btn:hover {
+    color:  #009e94;
+}
+
+
+/* responsive */
+@media (max-width: 760px) {
+    .charts .chartrow {
+        grid-template-columns: 28px 72px 1fr;
+    }
+
+    .charts .stats {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+    }
+}
+
+/* price button */
+.charts .price-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.charts .price-btn:hover {
+    background: #007b73;
+}
+
+/* header row above feed */
+.charts .charts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* ====== Tablet tweaks ====== */
+@media (max-width: 1024px) {
+    .charts .chartrow {
+        grid-template-columns: 32px minmax(80px, 10vw) 1fr auto;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .charts .coverWrap {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* stays square */
+        height: auto; /* let aspect-ratio drive height */
+    }
+
+    .charts .title {
+        font-size: 1rem;
+    }
+
+    .charts .tag {
+        padding: 4px 8px;
+        font-size: .85rem;
+    }
+}
+
+/* ====== Phone: two-row layout in each card ====== */
+@media (max-width: 760px) {
+    .charts .chartrow {
+        grid-template-columns: 28px 72px 1fr; /* rank | cover | meta */
+        grid-auto-rows: minmax(0, auto);
+        align-items: start;
+        gap: 8px;
+    }
+
+    /* make cover follow the 72px column */
+    .charts .coverWrap {
+        width: 72px;
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+
+    /* stats row drops below and spans full width */
+    .charts .stats {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .charts .titleRow {
+        gap: 6px;
+    }
+
+    .charts .title {
+        font-size: .98rem;
+    }
+
+    /* trim paddings a bit */
+    .charts .chartrow {
+        padding: 10px;
+    }
+
+    .charts .pill {
+        padding: 5px 8px;
+    }
+
+    .charts .tag {
+        padding: 4px 8px;
+    }
+}
+
+/* ====== Very small phones ====== */
+@media (max-width: 520px) {
+    .charts .chartrow {
+        grid-template-columns: 24px 64px 1fr;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .charts .coverWrap {
+        width: 64px;
+    }
+
+    .charts .title {
+        font-size: .95rem;
+    }
+
+    .charts .sub {
+        font-size: .88rem;
+    }
+
+    .charts .tags {
+        gap: 6px;
+    }
+
+    .charts .tag {
+        font-size: .82rem;
+    }
+
+    /* hide less-critical tags if space is tight */
+    .charts .tags {
+        display: none;
+    }
+}
+/* Featured tab active (gold) */
+.charts .charts__filter.featured.is-active {
+    border-color: #f2c94c;                    /* gold */
+    background-color: rgba(242, 201, 76, 0.18);
+    color: #f2c94c;
+}
+
+/* Optional hover/focus for featured tab */
+.charts .charts__filter.featured:focus-visible {
+    background-color: rgba(242, 201, 76, 0.28);
+}
+
+/* Featured row pill (gold) */
+.charts .boardpill.boardpill--featured {
+    border-color: #f2c94c;
+    background-color: rgba(242, 201, 76, 0.18);
+    color: #f2c94c;
+}
+
+.beat-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.beat-card:hover .beat-card__overlay {
+    opacity: 1;
+}
+
+.beat-card__overlay svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+
+/* --- Cover hover overlay (Charts) --- */
+.coverWrap {
+    position: relative;
+    width: 64px;     /* keep your existing size if different */
+    height: 64px;    /* ditto */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.coverWrap img,
+.coverWrap__ph {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #111; /* for placeholder */
+}
+
+/* overlay layer */
+.coverWrap__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+/* show overlay on hover/focus-within */
+.coverWrap:hover .coverWrap__overlay,
+.coverWrap:focus-within .coverWrap__overlay {
+    opacity: 1;
+}
+
+/* button reset + center */
+.coverWrap__playbtn {
+    display: inline-grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* icon size + color like landing */
+.coverWrap__playbtn svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+
+/* === Fix long title overflow on Charts === */
+.charts .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.charts .title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+
+    /* allow smooth horizontal scrolling for long titles */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-overflow: clip;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.charts .title::-webkit-scrollbar {
+    display: none;
+}
+
+/* optional fade on right edge for better UX */
+.charts .title {
+    position: relative;
+    padding-right: 6px;
+}
+
+.charts .title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: linear-gradient(to right, transparent, rgba(26, 26, 26, 0.9));
+    pointer-events: none;
+}

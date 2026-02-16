@@ -1,0 +1,80 @@
+.confirmDeleteModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.confirmDeleteModal {
+    background: #121212;               /* dark gray like tp-card */
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    color: #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    font-family: inherit;
+    text-align: left;
+}
+
+.confirmDeleteModal h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.confirmDeleteModal p {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.confirmDeleteModal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+/* Cancel button (ghost style) */
+.confirmDeleteModal__actions .btn--ghost {
+    background: transparent;
+    color: #bdbdbd;
+    border: 1px solid #222;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.confirmDeleteModal__actions .btn--ghost:hover {
+    color: #fff;
+    border-color: #2d2d2d;
+}
+
+/* Delete button (red danger style) */
+.confirmDeleteModal__actions .btn--danger {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.08s ease;
+}
+
+.confirmDeleteModal__actions .btn--danger:hover {
+    background: #e13c3c;
+}
+
+.confirmDeleteModal__actions .btn--danger:active {
+    transform: translateY(1px);
+}

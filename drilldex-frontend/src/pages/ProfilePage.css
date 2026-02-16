@@ -1,0 +1,1030 @@
+/* Scope everything to .profile to avoid collisions */
+.profile {
+    --bg: black;
+    --card: #1a1a1a;
+    --line: #222;
+    --muted: #009e94;
+    --text: #f3f4f6;
+    --brand: #009e94;
+    --brand-dark: #007b73;
+    --app-header-h: 64px;              /* set to your header height */
+    padding-top: calc(var(--app-header-h) + 8px);
+
+    background: black;
+    color: var(--text);
+    min-height: 100svh;
+
+}
+
+.profile .profile__banner {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background: #060606;
+    border-radius: 12px;
+
+    /* center the image inside the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* EDIT */
+.profile .profile__banner img {
+    /* keep aspect ratio and never exceed the box */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Content wrapper */
+.profile .profile__wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px 16px;
+}
+
+/* Header row */
+.profile .profile__header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: -56px; /* overlap banner */
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.profile .profile__avatarWrap {
+    flex: 0 0 auto;
+}
+
+.profile .profile__avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    border: 4px solid #0b0b0b;
+    background: #0f0f0f;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+}
+
+.profile .profile__avatar--placeholder {
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    border: 4px solid #0b0b0b;
+    color: #3a3a3a;
+    background: #0f0f0f;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+}
+
+.profile .profile__meta {
+    flex: 1 1 auto; /* take available space */
+    min-width: 0; /* allows text ellipsis */
+    display: grid;
+    gap: 6px;
+}
+
+.profile .profile__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #fff;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+profile .profile__role,
+.profile .profile__role {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.profile .profile__socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.profile .profile__social{
+
+        background: #111;
+        border-color: #333;
+        transform: scale(0.98);
+
+}
+
+.profile .profile__social {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: #1a1a1a;
+    border: 1px solid var(--line);
+    color: #b7b7b7;
+}
+
+.profile .profile__social:hover {
+    color: #fff;
+    filter: brightness(1.05);
+}
+
+.profile .profile__actions {
+    flex: 0 0 auto; /* don’t grow */
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile .profile__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: .95rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap; /* keeps "Message" one line */
+}
+
+.profile .profile__btn--primary {
+    background: var(--brand);
+    color: #fff;
+}
+
+.profile .profile__btn--primary:hover {
+    background: var(--brand-dark);
+}
+
+.profile .profile__btn--ghost {
+    background: #1a1a1a;
+    color: #eaeaea;
+    border: 1px solid var(--line);
+}
+
+.profile .profile__btn--ghost:hover {
+    filter: brightness(1.06);
+}
+
+/* Tabs */
+.profile .profile__tabs {
+    display: flex;
+    gap: 14px;
+    border-bottom: 1px solid var(--line);
+    margin-top: 18px;
+}
+
+.profile .profile__tab {
+    appearance: none;
+    background: transparent;
+    color: #cfcfcf;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 2px;
+    font-weight: 700;
+    font-size: .95rem;
+    cursor: pointer;
+}
+
+.profile .profile__tab:hover {
+    color: #fff;
+}
+
+.profile .profile__tab.is-active {
+    color: var(--brand);
+    border-color: var(--brand);
+}
+
+/* Panel */
+.profile .profile__panel {
+    padding-top: 16px;
+    background: black;
+}
+
+/* Track list */
+.profile .tracklist {
+    display: grid;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.profile .track {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile .track--featured {
+    box-shadow: 0 0 0 1px rgba(10, 163, 151, .3) inset;
+}
+
+.profile .track__play {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #111;
+    border: 1px solid var(--line);
+    color: #cfe9e5;
+    cursor: pointer;
+}
+
+.profile .track__play svg {
+    width: 24px;
+    height: 24px;
+}
+
+.profile .track__play:hover {
+    filter: brightness(1.06);
+}
+
+.profile .track__main {
+    display: grid;
+    gap: 8px;
+}
+
+.profile .track__badge {
+    font-size: .75rem;
+    font-weight: 800;
+    color: #8be2d8;
+    letter-spacing: .08em;
+}
+
+.profile .track__title {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.profile .track__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.profile .tag {
+    padding: 6px 10px;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.profile .tag:hover {
+    background: #111;
+    border-color: #333;
+    transform: scale(0.98);
+}
+
+.profile .track__meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.profile .track__lite {
+    color: #a9b0b7;
+    font-weight: 700;
+}
+
+.profile .track__price {
+    font-weight: 900;
+    font-size: 1.05rem;
+}
+
+.profile .track__more {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #101214;
+    border: 1px solid var(--line);
+    color: #c9c9c9;
+    cursor: pointer;
+}
+
+.profile .track__more:hover {
+    color: #fff;
+}
+
+/* About panel (within profile only) */
+.profile .about {
+    background: #121212;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.profile .about__title {
+    margin: 0 0 10px;
+    font-weight: 900;
+    font-size: clamp(1.4rem, 2.4vw + 0.4rem, 2.2rem); /* big + responsive */
+    line-height: 1.2;
+    color: #fff;
+}
+
+.profile .about__text {
+    font-size: 1rem;         /* keep body normal */
+    line-height: 1.6;
+    color: #d7d7d7;
+    max-width: 65ch;
+}
+
+/* optional: slightly smaller on phones */
+@media (max-width: 520px) {
+    .profile .about__title { font-size: 1rem; }
+    .profile .about__text  { font-size: 0.92rem; line-height: 1.5; }
+}
+/* Empty state */
+.profile .profile__empty {
+    color: var(--muted);
+    border: 1px dashed var(--line);
+    padding: 18px;
+    border-radius: 12px;
+    background: #0f0f10;
+}
+
+
+.profile .profile__actions {
+    display: flex;
+    gap: 12px;
+    justify-self: end;
+    align-items: center;
+}
+
+/* Profile charts-like feed (scoped) */
+.profile .profileCharts__feed {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.profile .profileChartrow {
+    display: grid;
+    grid-template-columns: 32px 84px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 10px;
+
+}
+
+.profile .profileChartrow:hover {
+    z-index: 5;
+        background: #181818;
+        border-color: #009e94;
+        box-shadow: 0 4px 14px rgba(0, 158, 148, 0.15);
+        transform: translateY(-2px);
+
+}
+
+.profile .profileChartrow--featured {
+    border-color: #009e94;
+    background: rgba(0, 158, 148, 0.1);
+}
+
+.profile .profileRank {
+    font-weight: 700;
+    color: #bdbdbd;
+    text-align: center;
+    min-width: 24px;
+}
+
+.profile .profileCoverWrap {
+    width: 84px;
+    height: 84px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.profile .profileCoverWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile .profileMeta {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.profile .profileTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile .profileTitle {
+    font-weight: 800;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Profile pills — mirror Charts styles */
+.profile .boardpill,
+.profile .profilePill {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+    text-transform: capitalize;
+}
+
+/* Featured (gold) */
+.profile .boardpill.boardpill--featured,
+.profile .profilePill.boardpill--featured {
+    border-color: #f2c94c;
+    background-color: rgba(242, 201, 76, 0.18);
+    color: #f2c94c;
+}
+
+/* New (teal) */
+.profile .boardpill.boardpill--new,
+.profile .profilePill.boardpill--new {
+    border-color: #009e94;
+    background-color: rgba(26, 188, 156, 0.15);
+    color: #009e94;
+}
+
+/* Popular (orange) */
+.profile .boardpill.boardpill--popular,
+.profile .profilePill.boardpill--popular {
+    border-color: #d35400;
+    background-color: rgba(211, 84, 0, 0.15);
+    color: #d35400;
+}
+
+/* Trending (purple) */
+.profile .boardpill.boardpill--trending,
+.profile .profilePill.boardpill--trending {
+    border-color: #8e44ad;
+    background-color: rgba(142, 68, 173, 0.15);
+    color: #8e44ad;
+}
+
+.profile .profileSub {
+    color: #9aa;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile .profileTags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.profile .profileStats {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Pills (likes, comments) */
+.profile .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #222;
+    background: #1a1a1a;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #ddd;
+    font-size: 0.85rem;
+}
+
+.profile .price-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    width: auto; /* ✅ fix: was 100% */
+    max-width: 100%; /* extra safety */
+    margin-top: auto;
+    height: 34px;
+}
+
+.albumFooter .price-btn {
+    width: 100%;
+    margin-top: auto;
+    padding: 6px 0;
+    justify-content: center;
+}
+
+
+
+
+/* ---------- Profile feed cards: mobile fixes ---------- */
+
+/* Tablet: a little tighter */
+@media (max-width: 1024px) {
+    .profile .profileChartrow {
+        grid-template-columns:32px minmax(80px, 10vw) 1fr auto;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .profile .profileCoverWrap {
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+
+    .profile .profileTitle {
+        font-size: 1rem;
+    }
+
+    .profile .tag {
+        padding: 4px 8px;
+        font-size: .85rem;
+    }
+}
+
+/* Phones: two‑row layout like Charts */
+@media (max-width: 760px) {
+    .profile .profileChartrow {
+        grid-template-columns:28px 72px 1fr; /* rank | cover | meta */
+        grid-auto-rows: minmax(0, auto);
+        align-items: start;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    /* cover follows its column */
+    .profile .profileCoverWrap {
+        width: 72px;
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+
+    /* let title + "Featured" pill wrap instead of pushing out */
+    .profile .profileTitleRow {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .profile .profileTitle {
+        font-size: .98rem;
+    }
+
+    /* allow meta line to wrap; stop overflow ellipsis on phones */
+    .profile .profileSub {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.3;
+    }
+
+    /* stats row drops below and spans full width */
+    .profile .profileStats {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 6px;
+        flex-wrap: wrap;
+    }
+
+    /* slightly smaller pills */
+    .profile .pill {
+        padding: 5px 8px;
+    }
+
+    .profile .tag {
+        padding: 4px 8px;
+    }
+
+}
+
+/* Very small phones: tighter grid, hide tags if cramped */
+@media (max-width: 520px) {
+    .profile .profileChartrow {
+        grid-template-columns:24px 64px 1fr;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .profile .profileCoverWrap {
+        width: 64px;
+    }
+
+    .profile .profileTitle {
+        font-size: .95rem;
+    }
+
+    .profile .profileSub {
+        font-size: .88rem;
+    }
+
+    .profile .profileTags {
+        display: none;
+    }
+}
+
+/* Albums grid — same radius/border language as feed rows */
+.profile__albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.albumCard {
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 12px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    overflow: visible;
+    position: relative;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+
+}
+
+.albumCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    border-color: #009e94;
+    z-index: 10;
+}
+
+.albumCard.is-menu-open {
+    z-index: 1000; /* Raise card above neighbors when menu is open */
+}
+
+.albumCard--featured {
+    border-color: #009e94;
+    background: rgba(0, 158, 148, 0.1);
+}
+
+.albumCover img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;;
+
+}
+
+.albumMeta {
+    padding: 8px 10px 0;
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+}
+
+.albumTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+
+.profile .moremenu__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile .moremenu__panel1 {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;             /* ✅ align panel to right edge of wrapper */
+    left: auto;           /* optional clarity */
+    display: inline-block;
+    width: max-content;
+    min-width: 180px;
+    max-width: min(280px, 92vw);
+    white-space: nowrap;
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .45);
+    padding: 6px;
+    z-index: 50;
+    box-sizing: border-box;
+}
+
+.albumTitle {
+    font-weight: 800;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+.albumSub {
+    color: #9aa;
+    font-size: .92rem;
+}
+
+.albumFooter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px 10px;
+}
+
+.albumFooter .pill {
+    padding: 5px 8px;
+}
+
+/* match mobile tweaks */
+.albumFooter .price-btn {
+    margin-left: auto;
+}
+
+/* push price to the right */
+
+/* Small screens: tighter cards */
+@media (max-width: 520px) {
+    .profile__albums {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .albumTitle {
+        font-size: .98rem;
+    }
+
+    .albumFooter {
+        gap: 8px;
+    }
+}
+
+.profile .profile__statsRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+.profile .profile__statChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border: 1px solid #222;
+    border-radius: 8px;
+    background: #1a1a1a;
+    font-size: .86rem;
+    line-height: 1;
+}
+
+.profile .profile__statChip strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.profile .profile__filterBar{
+    display:flex;
+    justify-content:flex-end;
+    margin: 4px 0 10px;
+}
+
+.profile .profile__sort{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    background: #000;
+    border-radius: 10px;
+    padding: 6px 10px;
+    gap: 6px;
+    position: relative;
+}
+
+.profile .profile__sort select{
+    background:transparent;
+    border:0;
+    color:#fff;
+    outline:0;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* mobile: make it full width if tight */
+@media (max-width: 760px){
+    .profile .profile__filterBar{ justify-content:stretch; }
+    .profile .profile__sort{ width:100%; justify-content:space-between; }
+    .profile .profile__sort select{ width:auto; }
+}
+
+.profile .profile__empty {
+    padding: 32px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+.profile .profile__bannerPh {
+    width: 100%;
+    height: 240px;
+    background: #0a0a0a;
+    border-bottom: 1px solid var(--line);
+    border-radius: 12px;
+}
+
+.profile .more-actions-btn {
+    background: none;
+    border: none;
+    color: #999;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.profile .more-actions-btn:hover {
+    color:  #009e94;
+}
+
+.card__more-btn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    padding: 2px 6px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* button itself (centered, no bg) */
+.profile .coverWrap__playbtn {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    /* hide until hover/focus */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+}
+
+.profile .coverWrap__playbtn svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+
+/* make sure the cover wrappers are positioning contexts */
+.profile .profileCoverWrap,
+.profile .albumCover {
+    position: relative;
+}
+
+/* show on hover or keyboard focus */
+.profile .profileCoverWrap:hover .coverWrap__playbtn,
+.profile .profileCoverWrap:focus-within .coverWrap__playbtn,
+.profile .albumCover:hover .coverWrap__playbtn,
+.profile .albumCover:focus-within .coverWrap__playbtn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.profile .albumTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0; /* allows children to shrink */
+}
+
+/* Title: scrollable horizontally when too long */
+/* Title: scrollable horizontally when too long */
+.profile .albumTitle {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #fff;
+
+    /* ✅ horizontal scroll instead of ellipsis */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+
+    /* ✅ smooth mobile scroll */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* hide Firefox scrollbars */
+}
+
+/* ✅ hide scrollbars on Chrome/Safari */
+.profile .albumTitle::-webkit-scrollbar {
+    display: none;
+}
+
+/* Pill: don't shrink */
+.profile .profilePill {
+    flex-shrink: 0;
+}
+
+/* Menu: keep aligned and fixed at the right */
+.profile .moremenu__wrapper {
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Beat row title container */
+.profile .profileTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;          /* don’t wrap title + pill */
+    min-width: 0;               /* allow scrollable children */
+}
+
+/* Beat title text */
+.profile .profileTitle {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+
+    /* Allow scrolling for long titles */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-overflow: clip;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.profile .profileTitle::-webkit-scrollbar {
+    display: none;
+}
+
+/* Optional: slight padding so text doesn’t touch edges when scrolled */
+.profile .profileTitle {
+    padding-right: 6px;
+}
+
+/* Keep tag pill aligned without breaking title layout */
+.profile .boardpillRow {
+    flex-shrink: 0;
+}
+
+
+
+

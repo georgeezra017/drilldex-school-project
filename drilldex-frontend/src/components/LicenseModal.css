@@ -1,0 +1,242 @@
+/* Scoped to the modal root */
+.licmodal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Backdrop */
+.licmodal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: saturate(120%) blur(2px);
+}
+
+/* Panel */
+.licmodal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(980px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #000; /* solid black */
+    border: 1px solid #1f1f1f;
+    border-radius: 16px;
+    box-shadow: 0 22px 64px rgba(0,0,0,.7);
+    color: #fff;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Header */
+.licmodal__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid #1a1a1a;
+}
+.licmodal__title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -.01em;
+}
+.licmodal__close {
+    background: none;
+    border: 1px solid #2a2a2a;
+    color: #ddd;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+    flex-shrink: 0;
+}
+.licmodal__close:hover { background: #111; border-color: #444; }
+
+/* Body layout */
+.licmodal__body {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+@media (max-width: 860px) {
+    .licmodal__body {
+        grid-template-columns: 1fr;
+
+    }
+}
+
+/* Left list */
+.licmodal__left {
+    display: grid;
+    gap: 10px;
+}
+.liccard {
+    text-align: left;
+    background: #000;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 12px;
+    color: #eaeaea;
+    cursor: pointer;
+    transition: border-color .15s, background .15s, box-shadow .15s;
+}
+.liccard:hover { background: #111; border-color: #2a2a2a; }
+.liccard.is-active {
+    border-color: #009e94;
+    box-shadow: inset 0 0 0 1px rgba(0,158,148,.35);
+    background: #000;
+}
+.liccard__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.liccard__name { font-weight: 800; }
+.liccard__price { font-weight: 800; color: #fff; }
+.liccard__files { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Right side */
+.licmodal__right {
+    background: #000;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 14px;
+}
+.licmodal__sectionTitle {
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.licmodal__subhead {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.licmodal__subprice { color: #009e94; font-weight: 800; margin-left: 6px; }
+
+.liclist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    margin: 10px 0 12px;
+    list-style: none;
+    padding: 0;
+}
+@media (max-width: 640px) {
+    .liclist { grid-template-columns: 1fr; }
+}
+.liclist__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d9d9d9;
+}
+.licicon { color: #19c37d; }
+
+.licmodal__receives {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    color: #bdbdbd;
+}
+.licmodal__files { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Chips */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: .8rem;
+    border: 1px solid #2a2a2a;
+    background: #000;
+    color: #e8e8e8;
+}
+.chip--file {
+    border-color: #284b49;
+    background: rgba(0,158,148,.12);
+    color: #a8ece6;
+}
+
+/* Footer */
+.licmodal__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-top: 1px solid #1a1a1a;
+    background: #000;
+    border-radius: 0 0 16px 16px;
+}
+.licmodal__total { color: #cfcfcf; }
+.licmodal__total strong { color: #fff; margin-left: 6px; }
+.licmodal__actions { display: inline-flex; gap: 10px; }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+}
+.btn--primary { background: #009e94; color: #fff; }
+.btn--primary:hover { background: #007b73; }
+.btn--ghost { background: transparent; color: #eaeaea; border: 1px solid #2a2a2a; }
+.btn--ghost:hover { background: #111; border-color: #444; }
+
+/* License modal loading overlay */
+.licmodal__loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65); /* darken backdrop */
+    z-index: 1000; /* above modal content */
+}
+
+/* Spinner animation */
+.licmodal__loading::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: licmodal-spin 0.8s linear infinite;
+}
+
+@keyframes licmodal-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 640px) {
+    .licmodal__panel {
+        padding-bottom: 60px; /* more padding on mobile if needed */
+    }
+}
+

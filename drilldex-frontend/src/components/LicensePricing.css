@@ -1,0 +1,159 @@
+/* ===== License Pricing (Compact, smaller to match modal) ===== */
+:root {
+    --lp-bg: #000;
+    --lp-card: #0b0b0b;
+    --lp-line: #1f1f1f;
+    --lp-muted: #a6a6a6;
+    --lp-brand: #009e94;
+    --lp-brand-d: #007b73;
+    --lp-text: #fff;
+}
+
+.licenseGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+@media (max-width: 720px) {
+    .licenseGrid { grid-template-columns: 1fr; }
+}
+
+.licenseCard {
+    background: var(--lp-card);
+    border: 1px solid var(--lp-line);
+    border-radius: 10px;
+    padding: 8px; /* smaller padding */
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.licenseCard.is-on {
+    border-color: rgba(0, 158, 148, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(0, 158, 148, 0.25);
+    background: #0d0f0f;
+}
+
+.licenseHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.licenseTitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--lp-text);
+    font-weight: 700;
+    font-size: .8rem; /* smaller */
+    letter-spacing: -.01em;
+}
+.licenseTitle svg {
+    width: 14px;
+    height: 14px;
+    color: var(--lp-muted);
+}
+
+/* --- Toggle switch (smaller, scoped to license card) --- */
+.licenseCard .switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 30px;   /* smaller */
+    height: 16px;  /* smaller */
+    flex: 0 0 auto;
+}
+.licenseCard .switch input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.licenseCard .lpSlider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #151515;
+    border: 1px solid var(--lp-line);
+    border-radius: 999px;
+    transition: background .2s, border-color .2s;
+}
+.licenseCard .lpSlider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 11px;   /* smaller knob */
+    height: 11px;
+    transform: translateY(-50%);
+    background: #e9e9e9;
+    border-radius: 50%;
+    transition: left .2s, background .2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,.45);
+}
+/* brand when checked */
+.licenseCard .switch > input:checked + .lpSlider {
+    background: var(--lp-brand);
+    border-color: var(--lp-brand);
+}
+.licenseCard .switch > input:checked + .lpSlider::after {
+    left: 15px; /* shorter travel */
+    background: #fff;
+}
+.licenseCard .switch > input:focus-visible + .lpSlider {
+    box-shadow: 0 0 0 2px rgba(0,158,148,.25);
+}
+
+/* --- Price row (compact) --- */
+.priceRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+}
+.currency {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px; /* smaller */
+    padding: 0 6px;
+    border: 1px solid var(--lp-line);
+    background: #0f0f0f;
+    color: var(--lp-muted);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .75rem;
+    letter-spacing: .01em;
+}
+.priceInput {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 28px; /* smaller */
+    background: #101010;
+    border: 1px solid #2b2b2b;
+    color: var(--lp-text);
+    border-radius: 8px;
+    padding: 0 8px;
+    outline: none;
+    font-size: .8rem;
+    transition: border-color .2s, box-shadow .2s;
+    appearance: textfield;
+}
+.priceInput:focus {
+    border-color: var(--lp-brand);
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .22);
+}
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* subtle helper text style */
+.licenseHelp {
+    margin-top: 4px;
+    color: var(--lp-muted);
+    font-size: .75rem;
+}
+
+/* Optional: tint title/icon when on */
+.licenseCard.is-on .licenseTitle svg { color: var(--lp-brand); }

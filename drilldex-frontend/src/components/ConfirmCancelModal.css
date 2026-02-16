@@ -1,0 +1,67 @@
+/* src/components/ConfirmCancelModal.css */
+
+.ccmodal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.ccmodal-box {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    padding: 24px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    color: #e0e0e0;
+}
+
+.ccmodal-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.ccmodal-desc {
+    font-size: 0.95rem;
+    color: #c9c9c9;
+    margin-bottom: 20px;
+}
+
+.ccmodal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.ccmodal-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.08s ease;
+}
+
+.ccmodal-btn:hover {
+    background: #1f1f1f;
+}
+
+.ccmodal-btn--danger {
+    background: #009e94;
+    color: #fff;
+    border: none;
+}
+
+.ccmodal-btn--danger:hover {
+    background: #007b73;
+}

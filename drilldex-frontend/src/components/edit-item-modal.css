@@ -1,0 +1,691 @@
+.editItemModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+
+.editItemModal {
+    background: #111;
+    color: #eee;
+    width: 100%;
+    max-width: 1000px;
+    max-height: calc(100vh - 48px);
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px #222, 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    transform: translateY(-40px);
+}
+
+.editItemModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.editItemModal__close {
+    background: none;
+    border: 1px solid #2a2a2a; /* new border */
+    color: #aaa;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 8px;        /* soften edges */
+    width: 34px;               /* square button */
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editItemModal__close:hover {
+    color: #fff;
+    border-color: #444;        /* brighten border on hover */
+}
+
+.editItemModal__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.editItemModal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.editItemModal__form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+}
+.editItemModal__form input {
+    margin-top: 6px;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 10px;
+}
+.editItemModal__form input:focus {
+    outline: none;
+    border-color: #009e94;
+}
+
+.editItemModal__contents {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.editItemModal__sectionHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.editItemModal__count {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.editItemModal__empty {
+    font-size: 0.9rem;
+    color: #888;
+    padding: 12px 0;
+}
+
+.editItemModal__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-height: calc(5 * 72px);  /* ~5 rows (48px thumb + padding/margin) */
+    overflow-y: auto;
+}
+
+.editItemModal__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.editItemModal__rowLeft {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.editItemModal__thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.editItemModal__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.editItemModal__rowMeta {
+    display: flex;
+    flex-direction: column;
+}
+.editItemModal__rowTitle {
+    font-weight: 600;
+}
+.editItemModal__rowSub {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.editItemModal__remove {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.editItemModal__remove:hover {
+    color: #fff;
+}
+
+.editItemModal__actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn--ghost {
+    background: transparent;
+    border: 1px solid #333;
+    color: #ccc;
+}
+.btn--ghost:hover {
+    border-color: #444;
+    color: #fff;
+}
+.btn--primary {
+    background: #009e94;
+    border: none;
+    color: #fff;
+}
+.btn--primary:hover {
+    background: #007b73;
+}
+
+@media (max-width: 768px) {
+    .editItemModal__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Make the modal a fixed-height flex column and prevent whole-modal scrolling */
+.editItemModal {
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;              /* <— was auto */
+}
+
+/* Let the grid fill remaining space between header and footer */
+.editItemModal__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    flex: 1 1 auto;                /* <— fill vertical space */
+    min-height: 0;                 /* <— allow children to scroll */
+}
+
+/* Right pane: scroll just the contents list */
+.editItemModal__contents {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 16px;
+    overflow-y: auto;              /* <— enable scroll */
+    max-height: 100%;              /* <— use all available height */
+}
+
+/* Left form: grow to fill column so we can place sticky actions at the bottom */
+.editItemModal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;                  /* <— fill column */
+    min-height: 0;
+}
+
+/* Add a sticky action row INSIDE the left form (place your Save button here) */
+.editItemModal__formActions {
+    margin-top: auto;              /* push to bottom */
+    position: sticky;
+    bottom: 0;
+    padding-top: 12px;
+    background: linear-gradient(180deg, rgba(15,15,15,0) 0%, #111 40%); /* subtle fade */
+}
+
+/* Footer actions row stays, but you asked for a Save on the left pane — keep both if you like */
+.editItemModal__actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Mobile: still one column, but keep scroll behavior */
+@media (max-width: 768px) {
+    .editItemModal__grid {
+        grid-template-columns: 1fr;
+    }
+    .editItemModal__contents {
+        max-height: 40vh;            /* tighter on small screens */
+    }
+}
+
+/* Licenses wrapper (same base look as contents) */
+.editItemModal__licenses {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px; /* push contents section down */
+}
+
+/* Each license row */
+.editItemModal__licenses .editItemModal__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* License type + enabled checkbox */
+.editItemModal__licenses .editItemModal__rowMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.editItemModal__licenses .editItemModal__rowTitle {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Price input field */
+.editItemModal__licenses input[type="number"] {
+    background: #111;
+    color: #fff;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+}
+
+.editItemModal__licenses input[type="number"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Toggle wrapper */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;   /* slider width */
+    height: 24px;  /* slider height */
+}
+
+/* Hide the native checkbox */
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Track */
+.toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    border-radius: 999px;           /* pill */
+}
+
+/* Knob */
+.toggle .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #bbb;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Checked state */
+.toggle input:checked + .slider {
+    background: #0aa59c;           /* on color */
+    border-color: #0aa59c;
+}
+.toggle input:checked + .slider::before {
+    transform: translate(20px, -50%); /* slide to the right */
+    background: #fff;
+}
+
+/* Disabled state */
+.toggle input:disabled + .slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Optional focus ring */
+.toggle input:focus-visible + .slider {
+    outline: 2px solid #00c0b4;
+    outline-offset: 2px;
+}
+
+/* Place it inside your licenses row nicely */
+.editItemModal__licenses .toggle {
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .editItemModal__backdrop {
+        padding: 0; /* remove backdrop padding on mobile */
+    }
+
+    .editItemModal {
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        transform: none;        /* remove translateY */
+        overflow-y: auto;       /* whole modal scrolls if taller than screen */
+        padding: 16px;          /* smaller padding for small screens */
+    }
+
+    .editItemModal__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .editItemModal__contents {
+        max-height: none;       /* let it flow */
+        overflow-y: visible;    /* avoid double scrollbars */
+    }
+}
+
+/* Don't let the backdrop scroll/clip */
+.editItemModal__backdrop { overflow: hidden; }
+
+/* Lock background when modal is open (you already toggle this class in JS) */
+body.modal-open {
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* MOBILE: make the modal cover the whole viewport and sit above the audio bar */
+@media (max-width: 768px) {
+    .editItemModal__backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;          /* higher than the audio bar */
+        padding: 0;
+        align-items: stretch;    /* fill height */
+        overflow: hidden;        /* backdrop itself doesn't scroll */
+    }
+
+    .editItemModal {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100dvh;          /* safe on mobile browsers */
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        transform: none;         /* no vertical shift */
+        padding: 16px;
+        overflow-y: auto;        /* modal is the scroller */
+        -webkit-overflow-scrolling: touch;
+        z-index: 10001;          /* panel above backdrop & audio bar */
+        box-sizing: border-box;
+    }
+
+    /* One column stack, with contents first and form second */
+    .editItemModal__grid {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        gap: 16px;
+        min-height: 0;
+        overflow: visible;
+    }
+    .editItemModal__contents { order: 1; max-height: none; overflow: visible; }
+    .editItemModal__form     { order: 2; height: auto; min-height: auto; }
+}
+
+/* Give the actions a little lift everywhere */
+.editItemModal__actions {
+    margin-top: 16px;
+    margin-bottom: 12px; /* new */
+}
+
+/* Keep focused fields from hugging the bottom while scrolling */
+.editItemModal {
+    scroll-padding-bottom: 80px; /* helps when keyboard opens too */
+}
+
+/* Mobile: add safe-area-aware bottom padding so buttons never touch the edge */
+@media (max-width: 768px) {
+    .editItemModal {
+        padding-bottom: calc(24px + env(safe-area-inset-bottom)); /* new */
+    }
+
+    /* Optional: tiny invisible spacer at the very end for extra cushion */
+    .editItemModal::after {
+        content: "";
+        display: block;
+        height: 12px;
+    }
+}
+
+/* Backdrop: stays fixed, does NOT scroll */
+.editItemModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;           /* <— was auto */
+}
+
+/* MODAL: the vertical scroller */
+.editItemModal {
+    background: #111;
+    color: #eee;
+    width: 100%;
+    max-width: 1000px;
+    max-height: calc(100vh - 48px);
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px #222, 0 8px 30px rgba(0,0,0,.5);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;           /* <— keep this */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    transform: translateY(-40px);
+}
+
+/* Grid just flows; no own scrolling */
+.editItemModal__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    flex: 0 0 auto;             /* don’t try to fill; let modal scroll */
+    min-height: 0;
+}
+
+/* Right pane: no extra scroll (list handles its own max-height) */
+.editItemModal__contents {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 16px;
+    overflow: visible;          /* <— avoid nested scrollbars */
+    max-height: none;
+}
+
+/* Keep the “show 5 then scroll” behavior for items */
+.editItemModal__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(5 * 72px);
+    overflow-y: auto;           /* only the list scrolls */
+}
+
+/* ❌ REMOVE this old block entirely (it breaks scrolling)
+.editItemModal {
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+*/
+
+/* Mobile: fullscreen; modal still the scroller */
+@media (max-width: 768px) {
+    .editItemModal__backdrop {
+        padding: 0;
+        align-items: stretch;
+    }
+    .editItemModal {
+        width: 100vw;
+        height: 100dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        transform: none;
+        padding: 16px;
+        overflow-y: auto;          /* modal scrolls */
+    }
+    .editItemModal__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.editItemModal__stems {
+    margin-top: 1.5rem;
+    border-top: 1px solid #222;
+    padding-top: 1rem;
+}
+
+.editItemModal__stems input[type="file"] {
+    display: block;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.editItemModal__note {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+/* 1) Stop the whole modal from scrolling */
+.editItemModal {
+    overflow: hidden !important;
+}
+
+/* 2) Let the grid take the available height between header/footer */
+.editItemModal__grid {
+    flex: 1 1 auto;     /* fill vertical space */
+    min-height: 0;      /* allow children to shrink */
+}
+
+/* 3) Make ONLY the left pane (licenses + stems + contents) scroll */
+.editItemModal__contents {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;   /* vertical scroll here */
+    overflow-x: hidden;
+    max-height: 100%;   /* stay within modal height */
+    min-height: 0;
+}
+
+/* (optional) keep the items list behavior inside the left pane */
+.editItemModal__list {
+    max-height: none;   /* let the pane manage scrolling */
+    overflow: visible;
+}
+
+.editItemModal {
+    max-height: 75vh;   /* make modal visibly smaller */
+    height: auto;       /* let it size naturally within that limit */
+}
+
+.stems-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stems-filename {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.stems-status {
+    color: #4ade80; /* green */
+    font-weight: 500;
+    margin-left: 6px;
+}
+
+/* --- Stems upload section --- */
+.stems-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+/* Hide ugly native file input */
+.stems-upload-row input[type="file"] {
+    display: none;
+}
+
+/* Custom upload button */
+.upload-btn {
+    background: #0e0e0e;          /* darker background */
+    border: 1px solid #222;       /* subtle border */
+    color: #ccc;                  /* soft gray text */
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.upload-btn:hover {
+    background: #151515;          /* slightly lighter on hover */
+    border-color: #333;           /* gentle highlight */
+    color: #fff;                  /* brighten text */
+}
+
+/* Filename and status */
+.stems-filename {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.stems-status {
+    color: #4ade80; /* green */
+    font-weight: 500;
+    margin-left: 8px;
+    font-size: 0.9rem;
+}

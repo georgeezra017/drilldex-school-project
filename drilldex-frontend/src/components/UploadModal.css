@@ -1,0 +1,319 @@
+/* Modal shell */
+:root { --audio-bar-h: 64px; }
+
+
+.uplmodal {
+    position: fixed;
+    inset: 0;
+    z-index: 2200;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: inherit;
+    overflow: auto;
+}
+
+.uplmodal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(2px);
+}
+
+.uplmodal__panel {
+    position: relative;
+    width: min(860px, 94vw);
+    background: #0b0b0b;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .6);
+    padding: 16px 16px 14px;
+    max-height: 92vh;
+    overflow: auto;
+}
+
+/* Head */
+.uplmodal__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 4px 10px;
+}
+
+.uplmodal__title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -.01em;
+}
+
+.uplmodal__close {
+    background: none;
+    border: 1px solid #2b2b2b;
+    color: #ddd;
+    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.uplmodal__close:hover {
+    color: #fff;
+    border-color: #444;
+}
+
+/* Tabs */
+.uplmodal__tabs {
+    display: inline-flex;
+    gap: 8px;
+    background: #0e0e0e;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.upltab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.upltab.is-active {
+    background: #101010;
+    color: #fff;
+    border-color: #2b2b2b;
+}
+
+/* Body */
+.uplmodal__body {
+    margin-top: 14px;
+}
+
+/* Forms */
+.uplform {
+    margin-top: 6px;
+}
+
+.uplgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 720px) {
+    .uplgrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.uplfield label {
+    display: block;
+    font-size: .9rem;
+    color: #bdbdbd;
+    margin-bottom: 6px;
+}
+
+.uplinput {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    outline: none;
+}
+
+.uplinput:focus {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .18);
+}
+
+.uplfield.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 720px) {
+    .uplfield.two {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dropzone */
+.dropzone {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 6px;
+    background: #0f0f0f;
+    border: 1px dashed #2f2f2f;
+    border-radius: 12px;
+    min-height: 90px;
+    padding: 12px;
+    cursor: pointer;
+    text-align: center;
+    color: #cfcfcf;
+}
+
+.dropzone svg {
+    font-size: 22px;
+    color: #aaa;
+}
+
+.dropzone:hover {
+    border-color: #3a3a3a;
+}
+
+/* Footer */
+.uplmodal__foot {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.uplbtn {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #2b2b2b;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.uplbtn--ghost {
+    background: transparent;
+    color: #ddd;
+}
+
+.uplbtn--primary {
+    background: #009e94;
+    color: #000;
+    border-color: #007b73;
+}
+
+.uplbtn--primary:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 720px) {
+    .uplmodal__panel {
+        width: 100vw;
+        height: 100vh;             /* full height */
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        overflow: auto;
+        padding: calc(16px + env(safe-area-inset-top)) 16px
+        calc(14px + env(safe-area-inset-bottom));
+    }
+}
+
+.uplmodal {
+    display: grid;
+    justify-items: center;
+    align-items: center;   /* still centered */
+    padding-bottom: var(--audio-bar-h, 64px); /* leave room for audio bar */
+}
+
+.uplmodal__panel {
+    transform: translateY(-20px); /* lift the panel up a bit */
+}
+
+/* leave space in the centering math for the audio bar */
+.uplmodal {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: var(--audio-bar-h, 64px); /* height of your player */
+    overflow: hidden;                         /* prevent page scroll; panel will scroll */
+}
+
+/* the panel is the scroller; stop at the audio bar */
+.uplmodal__panel {
+    position: relative;
+    width: min(860px, 94vw);
+    background: #0b0b0b;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .6);
+    padding: 16px 16px 14px;
+
+    /* key line: cap height above the audio bar and allow internal scroll */
+    max-height: calc(100vh - var(--audio-bar-h, 64px) - 32px); /* 32px = breathing room */
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    /* optional: lift a bit above center so it “sits” higher */
+    transform: translateY(-10px);
+}
+
+/* mobile: make it full-height but still respect the audio bar */
+@media (max-width: 720px) {
+    .uplmodal__panel {
+        width: 100vw;
+        max-width: 100vw;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: calc(16px + env(safe-area-inset-top)) 16px
+        calc(14px + env(safe-area-inset-bottom));
+
+        max-height: calc(100vh - var(--audio-bar-h, 64px)); /* still above the player */
+        transform: none; /* usually not needed on small screens */
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+    touch-action: none;          /* stops iOS rubber-band */
+}
+
+@media (max-width: 768px) {
+    .editItemModal__backdrop {
+        padding: 0;
+        align-items: stretch;              /* fill the viewport height */
+        overflow: hidden;                  /* backdrop doesn't scroll */
+    }
+
+    .editItemModal {
+        width: 100vw;
+        height: 100vh;                     /* full screen */
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        transform: none;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;                  /* modal is the frame, not scrolling itself */
+    }
+
+    /* header stays, grid takes the rest and scrolls */
+    .editItemModal__grid {
+        grid-template-columns: 1fr;        /* single column on mobile */
+        flex: 1 1 auto;
+        min-height: 0;                     /* critical so children can scroll */
+        overflow-y: auto;                  /* <- the scroll lives here */
+        -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+    }
+
+    /* avoid double scrollbars inside the right pane */
+    .editItemModal__contents {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+

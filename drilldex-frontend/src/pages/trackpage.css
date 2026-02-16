@@ -1,0 +1,792 @@
+/* === Track Page (scoped) =============================================== */
+
+.trackpage {
+    background: #000; /* full black */
+    color: #e0e0e0; /* light gray text */
+    min-height: 100vh;
+}
+
+.trackpage__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 12px 0;
+    display: grid;
+    grid-template-columns: 360px 1fr; /* left card + right content */
+    gap: 24px;
+}
+
+.tp-card {
+    background: #121212; /* dark gray card */
+    border: 1px solid #1e1e1e; /* subtle border */
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    padding: 18px;
+}
+
+/* Left column ----------------------------------------------------------- */
+
+.tp-cover {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.tp-cover img {
+    width: 100%;
+    display: block;
+}
+
+.tp-play {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: none;
+    background: #009e94; /* primary */
+    color: #fff;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.tp-play:hover {
+    background: #007b73;
+}
+
+/* secondary */
+
+.tp-titleblock {
+    margin-bottom: 8px;
+}
+
+.tp-title {
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin: 0 0 6px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* clamp to 2 lines like mock */
+    -webkit-box-orient: vertical;
+}
+
+.tp-artistline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #c9c9c9;
+}
+
+.tp-artist {
+    font-weight: 500;
+}
+
+.tp-verified {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #009e94; /* brand accent */
+    box-shadow: 0 0 0 2px #121212;
+}
+
+.tp-actions-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.tp-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #d6d6d6;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.08s ease;
+}
+
+.tp-action:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.tp-action-icon {
+    font-size: 28px; /* consistent icon size */
+    width: 28px;
+    height: 28px;
+    display: block; /* remove inline baseline quirks */
+    line-height: 0; /* no extra vertical metrics */
+    margin: 0 0 6px;
+}
+
+.tp-action-num {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    display: block;
+    line-height: 1;
+    min-height: 1.2em; /* equal slot so all align */
+    text-align: center;
+}
+
+.tp-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 10px 0 16px;
+}
+
+.tp-statnum {
+    color: #fff;
+    font-weight: 700;
+}
+
+.tp-statlabel {
+    color: #8a8a8a;
+    font-size: .85rem;
+}
+
+.tp-info {
+    margin-top: 6px;
+}
+
+.tp-infotitle {
+    color: #cfcfcf;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: .04em;
+    margin-bottom: 8px;
+}
+
+.tp-infolist {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    row-gap: 8px;
+    column-gap: 10px;
+    font-size: .95rem;
+}
+
+.tp-infolist dt {
+    color: #9e9e9e;
+}
+
+.tp-infolist dd {
+    margin: 0;
+    color: #d8d8d8;
+}
+
+.tp-tags {
+    margin-top: 18px;
+}
+
+.tp-tagrow {
+    display: flex;
+    flex-wrap: nowrap; /* horizontal scroll */
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.tp-tagrow::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.tp-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 12px;
+    background: #1a1a1a; /* dark background */
+    border: 1px solid #222; /* subtle border */
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.tp-tag:hover {
+    background: #111;
+    border-color: #333;
+    transform: scale(0.98);
+}
+
+/* Right column ---------------------------------------------------------- */
+
+.tp-rightcard {
+    padding: 20px;
+}
+
+.tp-lic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tp-lic-header h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.tp-lic-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tp-total {
+    text-align: right;
+}
+
+.tp-total-label {
+    font-size: .8rem;
+    color: #9a9a9a;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.tp-total-amt {
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.tp-addcart {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background .2s ease, transform .08s ease;
+}
+
+.tp-addcart:hover {
+    background: #007b73;
+}
+
+.tp-addcart:active {
+    transform: translateY(1px);
+}
+
+.tp-licenses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 1024px) {
+    .tp-licenses {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .trackpage__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .tp-licenses {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tp-license {
+    text-align: left;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #e8e8e8;
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.tp-license:hover {
+    border-color: #3a3a3a;
+    background: #1e1e1e;
+}
+
+.tp-license.is-selected {
+    border-color: #009e94; /* brand accent for selection */
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+}
+
+.tp-license-name {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.tp-badge {
+    margin-left: 8px;
+    color: #009e94; /* subtle badge pop */
+    font-weight: 800;
+}
+
+.tp-license-price {
+    color: #009e94; /* price in brand color */
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.tp-license-formats {
+    color: #9b9b9b;
+    font-size: .9rem;
+}
+
+.tp-divider {
+    height: 1px;
+    background: #1e1e1e;
+    margin: 18px 0;
+}
+
+/* Comments --------------------------------------------------------------- */
+
+.tp-comments h3 {
+    margin: 0 0 12px;
+    color: #fff;
+}
+
+.tp-commentlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tp-comment {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #171717;
+}
+
+.tp-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    color: #009e94;
+}
+
+.tp-commentbody {
+    min-width: 0;
+}
+
+.tp-commenttop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.tp-commentuser {
+    font-weight: 700;
+    color: #eaeaea;
+}
+
+.tp-commentago {
+    color: #8a8a8a;
+    font-size: .85rem;
+}
+
+.tp-commenttext {
+    color: #cfcfcf;
+}
+
+.tp-commentinput {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+}
+
+.tp-commentinput input {
+    background: #0f0f0f;
+    border: 1px solid #1e1e1e;
+    color: #e6e6e6;
+    padding: 12px 12px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.tp-commentinput input:focus {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+}
+
+
+/* Back button row */
+.tp-back {
+    max-width: 1200px;
+    margin: 16px auto 40px;
+    padding: 0 12px;
+}
+
+.tp-back button {
+    background: transparent;
+    color: #bdbdbd;
+    border: 1px solid #222;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tp-back button:hover {
+    color: #fff;
+    border-color: #2d2d2d;
+}
+
+.tp-commentinput {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tp-commentinput input {
+    flex: 1;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.tp-commentinput input::placeholder {
+    color: #777;
+}
+
+.tp-comment-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009e94;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tp-comment-send:hover {
+    background: #007b73;
+}
+
+/* ---- License details (match LicenseModal look) ---- */
+.tp-lic-details {
+    margin-top: 16px;
+    padding: 16px;
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+}
+
+.tp-lic-details-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.tp-lic-details-name {
+    font-weight: 700;
+    color: #eaeaea;
+    font-size: 1rem;
+}
+
+.tp-lic-details-price {
+    background: #009e94;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.tp-lic-details-sub {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: #cfcfcf;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.tp-lic-perks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px 16px;
+}
+
+.tp-lic-perk {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d7d7d7;
+    font-size: 0.95rem;
+}
+
+.tp-perk-icon {
+    width: 18px;
+    height: 18px;
+    color: #009e94;
+    flex: 0 0 auto;
+}
+
+.tp-lic-receives {
+    margin-top: 14px;
+    color: #bdbdbd;
+    font-size: 0.92rem;
+}
+
+.tp-lic-files {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.tp-chip {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid #222;
+    background: #0f0f0f;
+    color: #e9e9e9;
+    font-size: 0.82rem;
+    line-height: 1;
+}
+
+.tp-chip--file {
+    border-color: #2a2a2a;
+}
+
+.tp-pack-contents {
+    margin-top: 18px;
+}
+
+.tp-packlist {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tp-packitem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #1f1f1f;
+    border-radius: 10px;
+    background: #0f0f0f;
+}
+
+.tp-packitem-left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tp-packitem-cover {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #111;
+    flex: 0 0 auto;
+}
+
+.tp-packitem-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tp-packitem-meta {
+    min-width: 0;
+}
+
+.tp-packitem-title {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tp-packitem-sub {
+    color: #9aa0a6;
+    font-size: .9rem;
+}
+
+.tp-sendbtn {
+    background: #009e94; /* primary teal */
+    color: #fff;
+    border: none;
+    border-radius: 12px; /* ⬅️ your request */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.08s ease;
+}
+
+.tp-sendbtn:hover {
+    background: #007b73; /* darker teal on hover */
+}
+
+.tp-sendbtn:active {
+    transform: scale(0.97); /* subtle press effect */
+}
+
+/* trackpage.css */
+.tp-packitem-cover {
+    position: relative;
+    width: 56px; /* pick a size that matches your row */
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 0 0 56px;
+}
+
+.tp-packitem-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.tp-packitem-cover .beat-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+
+.tp-packitem-cover:hover .beat-card__overlay {
+    opacity: 1;
+}
+
+/* comment list layout */
+.tp-commentlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tp-comment {
+    display: flex;
+    gap: 12px;
+    align-items: center; /* ✅ vertically center avatar with text */
+    padding: 10px 0;
+    border-bottom: 1px solid #171717;
+}
+
+/* avatar: fixed circle, clips image */
+.tp-avatar {
+    width: 40px; /* consistent size */
+    height: 40px;
+    flex: 0 0 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #1f1f1f; /* fallback bg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ddd;
+}
+
+.tp-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* ✅ ensures the image stays inside */
+}
+
+.tp-commentbody {
+    flex: 1; /* take up remaining space */
+    min-width: 0;
+}
+
+/* initial letter when no avatar */
+.tp-initial {
+    line-height: 1;
+    font-size: 14px;
+}
+
+/* body takes remaining width */
+.tp-commentbody {
+    flex: 1 1 auto;
+    min-width: 0; /* prevents flex overflow */
+}
+
+/* name on left, age on right */
+.tp-commenttop {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.tp-commentuser {
+    font-weight: 700;
+}
+
+.tp-commentago {
+    opacity: 0.7;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* optional: tighten text spacing in dark box */
+.tp-commenttext {
+    margin-top: 2px;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+
+

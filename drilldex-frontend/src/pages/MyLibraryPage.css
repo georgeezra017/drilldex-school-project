@@ -1,0 +1,553 @@
+/* === My Library Page (scoped) ========================================= */
+
+.librarypage {
+    background: #000;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+.lp__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 12px 0;
+    display: grid;
+    grid-template-columns: 360px 1fr; /* left card + right content */
+    gap: 24px;
+}
+
+.lp-card {
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    padding: 18px;
+}
+
+/* Left column ---------------------------------------------------------- */
+
+.lp-cover {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+.lp-cover img { width: 100%; display: block; }
+
+.lp-play {
+    position: absolute;
+    bottom: 10px; left: 10px;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    border: none;
+    background: #009e94;
+    color: #fff;
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+.lp-play:hover { background: #007b73; }
+
+.lp-titleblock { margin-bottom: 8px; }
+.lp-title {
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin: 0 0 6px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.lp-artistline {
+    display: flex; align-items: center; gap: 6px;
+    color: #c9c9c9;
+}
+.lp-artist { font-weight: 500; }
+.lp-verified {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #009e94;    /* brand teal */
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 0 2px #121212;
+    flex: 0 0 auto;
+
+}
+
+
+
+.lp-actions-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.lp-action {
+    flex: 1;
+    display: flex; flex-direction: column; align-items: center;
+    background: none; border: none; color: #d6d6d6;
+    cursor: pointer;
+    transition: color .2s ease, transform .08s ease;
+}
+.lp-action:hover { color: #fff; transform: scale(1.05); }
+.lp-action-icon {
+    font-size: 28px; width: 28px; height: 28px; display: block;
+    line-height: 0; margin: 0 0 6px;
+}
+.lp-action-num {
+    font-size: 0.95rem; font-weight: 600; color: #e0e0e0; line-height: 1;
+    min-height: 1.2em; text-align: center;
+}
+
+.lp-stats {
+    display: grid; grid-template-columns: repeat(2,1fr);
+    gap: 12px; margin: 10px 0 16px;
+}
+.lp-statnum { color: #fff; font-weight: 700; }
+.lp-statlabel { color: #8a8a8a; font-size: .85rem; }
+
+.lp-info { margin-top: 6px; }
+.lp-infotitle {
+    color: #cfcfcf; text-transform: uppercase;
+    font-weight: 700; font-size: .85rem; letter-spacing: .04em;
+    margin-bottom: 8px;
+}
+.lp-infolist {
+    display: grid; grid-template-columns: 120px 1fr;
+    row-gap: 8px; column-gap: 10px; font-size: .95rem;
+}
+.lp-infolist dt { color: #9e9e9e; }
+.lp-infolist dd { margin: 0; color: #d8d8d8; }
+
+.lp-tags { margin-top: 18px; }
+.lp-tagrow {
+    display: flex; gap: 8px; overflow-x: auto; flex-wrap: nowrap;
+    scrollbar-width: none; -ms-overflow-style: none;
+}
+.lp-tagrow::-webkit-scrollbar { display: none; }
+.lp-tag {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 34px; padding: 0 14px; border-radius: 12px;
+    background: #1a1a1a; border: 1px solid #222; color: #fff;
+    font-size: 0.9rem; line-height: 1; white-space: nowrap;
+    transition: background .2s ease, border-color .2s ease, transform .05s ease;
+}
+.lp-tag:hover { background: #111; border-color: #333; transform: scale(0.98); }
+
+.lp-divider { height: 1px; background: #1e1e1e; margin: 18px 0; }
+
+.lp-empty { color: #bdbdbd; }
+
+/* Right column --------------------------------------------------------- */
+
+.lp-right { padding: 20px; }
+
+.lp-righthead {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; margin-bottom: 16px;
+}
+.lp-righthead h2 { margin: 0; color: #fff; }
+
+.lp-filters {
+    display: flex; gap: 10px; align-items: center;
+}
+.lp-tabs {
+    display: flex;
+    gap: 8px;                  /* a little more breathing room */
+}
+
+.lp-tab {
+    /*flex: 1;                   !* let tabs stretch evenly if you want *!*/
+    height: 40px;              /* match search bar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    color: #e0e0e0;
+    border-radius: 10px;
+    padding: 0 16px;           /* horizontal padding */
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.lp-tab.is-active,
+.lp-tab:hover {
+    border-color: #009e94;
+    background: #151515;
+    color: #fff;
+}
+
+.lp-search {
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    color: #e6e6e6;
+    padding: 10px 40px 10px 12px;  /* ⬅️ extra right padding for icon */
+    border-radius: 10px;
+    outline: none;
+    font-size: 0.95rem;
+}
+.lp-search:focus {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0,158,148,.15);
+}
+
+.lp-searchwrap {
+    position: relative;
+    margin-left: auto;     /* push it to the right */
+    width: 200px;          /* ⬅️ fixed size for the searchbar */
+    flex: 0 0 auto;        /* prevent flexbox from stretching it */
+}
+
+
+
+.librarypage .lp-searchicon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    left: auto;                /* ⬅️ cancel any previous left value */
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+    pointer-events: none;
+    display: block;
+    z-index: 2;
+}
+
+.lp-list { display: flex; flex-direction: column; gap: 10px; }
+
+.lp-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 10px; border: 1px solid #1f1f1f;
+    border-radius: 10px; background: #0f0f0f; cursor: pointer;
+}
+.lp-row.is-selected { border-color: #009e94; }
+
+.lp-row-left { display: flex; gap: 12px; align-items: center; min-width: 0; }
+
+.lp-thumb {
+    position: relative; width: 56px; height: 56px; border-radius: 8px;
+    overflow: hidden; flex: 0 0 56px; background: #111;
+}
+.lp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.lp-thumb .beat-card__overlay {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    background: rgba(0,0,0,.45); opacity: 0; transition: opacity .2s ease; pointer-events: none;
+}
+.lp-thumb:hover .beat-card__overlay { opacity: 1; }
+
+.lp-row-meta { min-width: 0; }
+.lp-row-title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lp-row-sub { color: #9aa0a6; font-size: .9rem; display: flex; gap: 6px; flex-wrap: wrap; }
+
+.librarypage .lp-chip {
+    display: inline-flex; align-items: center; height: 22px; padding: 0 8px;
+    border-radius: 6px; border: 1px solid #222; background: #0f0f0f; color: #e9e9e9;
+    font-size: 0.78rem; line-height: 1;
+}
+
+.lp-row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.lp-sendbtn {
+    background: #009e94; color: #fff; border: none; border-radius: 12px;
+    padding: 8px 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    transition: background .2s ease, transform .08s ease;
+}
+.lp-sendbtn:hover { background: #007b73; }
+.lp-sendbtn:active { transform: scale(0.97); }
+
+.lp-back { margin-top: 16px; }
+.lp-back a {
+    background: transparent; color: #bdbdbd; border: 1px solid #222;
+    padding: 10px 12px; border-radius: 10px;
+}
+.lp-back a:hover { color: #fff; border-color: #2d2d2d; }
+
+/* Responsive ----------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .lp__inner { grid-template-columns: 1fr; }
+}
+
+/* -------- Pack/Kit Contents (Drilldex Colors) -------- */
+.lp-contents {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lp-contents .lp-infotitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #009e94; /* primary accent */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lp-tracklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lp-track {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lp-track:last-child {
+    border-bottom: none;
+}
+
+.lp-trackplay {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 158, 148, 0.15); /* faint primary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.lp-trackplay:hover {
+    background: rgba(0, 123, 115, 0.8); /* secondary on hover */
+    transform: scale(1.05);
+}
+
+.lp-trackplay.is-active {
+    background: #009e94; /* primary for active play */
+    color: #fff;
+}
+
+.lp-trackmeta {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.lp-tracktitle {
+    font-size: 0.95rem;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lp-tracksub {
+    font-size: 0.8rem;
+    color: #007b73; /* secondary for subtle details */
+    margin-top: 0.1rem;
+}
+
+/* two-column layout */
+.lp__inner {
+    display: flex;          /* if it's already flex, fine */
+    gap: 24px;
+    align-items: flex-start; /* ← stop equal-height stretching */
+}
+
+/* left panel: fixed width, auto height */
+.lp-card.lp-left {
+    flex: 0 0 360px;         /* pick a width you like (320–400px) */
+    align-self: flex-start;  /* ← hug content height */
+    height: auto;            /* guard against any global height:100% */
+}
+
+/* right panel: fills remaining space */
+.lp-card.lp-right {
+    flex: 1 1 auto;
+    min-width: 0;            /* prevent overflow from long titles/buttons */
+}
+
+/* (optional) if you have a generic .lp-card that enforces height */
+.lp-card {
+    height: auto;            /* ensure no global 100% height */
+}
+
+/* responsive stacking */
+@media (max-width: 820px) {
+    .lp__inner {
+        flex-direction: column;
+    }
+    .lp-card.lp-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+.lp-status {
+    display:inline-block;
+    border:1px solid #2a2a2a;
+    background:#1b1b1b;
+    border-radius:12px;
+    padding:4px 10px;
+    font-size:.85rem;
+    margin-left:8px;
+    text-transform:capitalize;
+}
+.lp-status--active { border-color:#1f6; }
+.lp-status--paused { border-color:#ffb020; }
+.lp-status--canceled { border-color:#f66; }
+
+
+.lp-righthead {
+    display: flex;
+    flex-direction: column;   /* title on its own row */
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.lp-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;          /* allows wrapping when narrow */
+    gap: 12px;
+}
+
+.lp-tabs {
+    display: flex;
+    flex-wrap: wrap;          /* tabs can wrap to multiple lines */
+    gap: 8px;
+    flex: 1 1 auto;           /* take available space so search sits on the right */
+    min-width: 320px;         /* keeps a healthy area for tabs before wrapping */
+}
+
+.lp-searchwrap {
+    position: relative;
+    margin-left: auto;        /* push it to the right on wide screens */
+    flex: 0 1 420px;          /* preferred width but shrinkable */
+    min-width: 260px;         /* don’t get too small */
+    max-width: 100%;
+}
+
+.lp-search {
+    width: 100%;
+    padding: 8px 32px 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+.lp-searchicon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #aaa;
+}
+
+/* Small screen: search takes full width, tabs drop below */
+@media (max-width: 900px) {
+    .lp-searchwrap {
+        order: 2;            /* appears below tabs */
+        flex: 1 1 100%;
+        min-width: 100%;
+        margin-left: 0;
+    }
+    .lp-tabs {
+        order: 1;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
+/* Title row: stack title, then filters */
+.lp-righthead {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* title & tabs aligned left */
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* Filters row: keep tabs left, search right (same line until it must wrap) */
+.lp-filters {
+    display: flex;
+    flex-wrap: wrap;           /* allow wrapping when narrow */
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* ⬅️ Do NOT let tabs consume the row */
+.lp-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 0 1 auto;            /* was 1 1 auto — this is the key change */
+    min-width: 0;              /* avoid pushing search off the line */
+}
+
+/* Search on the right, with a reasonable width cap */
+.lp-searchwrap {
+    position: relative;
+    margin-left: auto;         /* push to the right on wide screens */
+    flex: 0 0 320px;           /* fixed basis so it doesn’t stretch */
+    width: 320px;
+    max-width: 100%;
+}
+
+.lp-search {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border-radius: 10px;
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    color: #e6e6e6;
+    font-size: 0.95rem;
+}
+
+/* When narrow: search drops below tabs and spans full width */
+@media (max-width: 900px) {
+    .lp-searchwrap {
+        order: 2;
+        flex: 1 1 100%;
+        width: 100%;
+        margin-left: 0;
+    }
+    .lp-tabs { order: 1; }
+}
+
+.lp-status-row {
+    font-size: 1rem;
+    margin-top: 8px;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.lp-badge.active {
+    background: #052e16;  /* dark green background */
+    color: #4ade80;        /* bright green text */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+}
+
+.lp-badge.expired {
+    background: #450a0a;  /* dark red background */
+    color: #f87171;        /* bright red text */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+}
+
+.lp-badge.paused {
+    background: #555;
+    color: #fff;
+}

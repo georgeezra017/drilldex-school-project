@@ -1,0 +1,156 @@
+/* Backdrop */
+.authModal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.authModal__content {
+    background: #0b0b0b;
+    border: 1px solid #222;
+    padding: 28px 24px;
+    border-radius: 12px;
+    width: min(400px, 90%);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.7);
+}
+
+/* Headings */
+.authModal__content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Form layout */
+.authModal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+/* Input wrapper like search bar */
+.authModal__field {
+    display: flex;
+    align-items: center;
+    background: #1b1b1b;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    width: 100%;
+}
+
+/* Input itself */
+.authModal__input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.authModal__input::placeholder {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* Main action button */
+.authModal__btn {
+    background: #009e94;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.authModal__btn:hover {
+    background: #007b73;
+}
+
+/* OAuth Providers */
+.authModal__providers {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.provider {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center contents */
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    background: #141414;
+    color: #eaeaea;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.provider:hover {
+    background: #1e1e1e;
+}
+
+.provider img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Divider */
+.authModal__divider {
+    position: relative; /* so icon can be pinned */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #777;
+    font-size: 0.85rem;
+    margin: 18px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+.authModal__divider::before,
+.authModal__divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #222;
+    border-radius: 999px;
+}
+
+/* Sign up link */
+.authModal__alt {
+    margin-top: 14px;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.authModal__alt a {
+    color: #009e94;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.authModal__alt a:hover {
+    color: #007b73;
+    text-decoration: underline;
+}

@@ -1,0 +1,610 @@
+/* === Search Page (scoped, matches TrackPage dark theme) ================= */
+
+.searchpage {
+    /* layers (keep these comfortably below header/player) */
+    --z-card: 10;
+    --z-card-hover: 20;
+    --z-card-open: 30;
+    --z-menu: 40;
+
+    /* layout */
+    --card-min: 250px; /* a little bigger (was 160px) */
+    --gap: 14px; /* a bit more breathing room */
+
+    /* fixed bars (tweak these to your app) */
+    --header-height: 72px; /* 👈 height of your fixed top nav */
+    --player-height: 96px; /* 👈 height of your bottom audio bar */
+
+    background: #000;
+    color: #e0e0e0;
+    min-height: 100vh;
+
+    /* keep content clear of header + player */
+    padding-top: calc(var(--header-height) + 12px + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(var(--player-height) + env(safe-area-inset-bottom, 0px));
+}
+
+.searchpage .searchpage__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 12px 0;
+}
+
+/* Top bar --------------------------------------------------------------- */
+.searchpage .sp-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.searchpage .sp-inputwrap {
+    position: relative;
+    flex: 1 1 420px;
+}
+
+.searchpage .sp-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .7;
+    color: #9aa0a6;
+}
+
+.searchpage .sp-input {
+    width: 100%;
+    padding: 10px 36px;
+    border-radius: 10px;
+    border: 1px solid #1e1e1e;
+    background: #0f0f0f;
+    color: #e6e6e6;
+    font-size: 16px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.searchpage .sp-input::placeholder {
+    color: #777;
+}
+
+.searchpage .sp-input:focus {
+    border-color: #009e94;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+}
+
+.searchpage .sp-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #9aa0a6;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.searchpage .sp-clear:hover {
+    color: #e0e0e0;
+    opacity: 1;
+}
+
+/* Filter chips ---------------------------------------------------------- */
+.searchpage .sp-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.searchpage .sp-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    background: #0f0f0f;
+    color: #e9e9e9;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, color .2s, transform .05s;
+}
+
+.searchpage .sp-chip:hover {
+    background: #111;
+    border-color: #2b2b2b;
+    transform: scale(.98);
+}
+
+.searchpage .sp-chip.is-active {
+    border-color: #009e94;
+    background: #009e94;
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 158, 148, .15);
+}
+
+/* Meta / state ---------------------------------------------------------- */
+.searchpage .sp-meta {
+    margin: 14px 2px;
+    font-size: 14px;
+    color: #9aa0a6;
+}
+
+.searchpage .sp-error {
+    color: #ff6b6b;
+}
+
+/* Results list (FLEXBOX) ----------------------------------------------- */
+.searchpage .sp-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    align-items: flex-start;
+    justify-content: flex-start; /* keep items left-aligned */
+    position: relative;
+    overflow: visible;
+}
+
+/* Card ------------------------------------------------------------------ */
+.searchpage .sp-card {
+    /* slightly bigger cards; clamp keeps them responsive */
+    flex: 0 0 calc((100% - (5 * var(--gap))) / 6);
+    max-width: calc((100% - (5 * var(--gap))) / 6);
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    position: relative;
+    overflow: visible;
+    z-index: var(--z-card);
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+/* subtle hover */
+.searchpage .sp-card:hover {
+    border-color: #2a2a2a;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
+    background: #151515;
+    z-index: var(--z-card-hover);
+}
+
+/* When the menu is open, raise the card but keep it below header/player */
+.searchpage .sp-card.is-menu-open,
+.searchpage .sp-card.is-menu-open:hover {
+    z-index: var(--z-card-open);
+}
+
+/* Cover --------------------------------------------------------------- */
+.searchpage .sp-cover {
+    position: relative;
+    aspect-ratio: 16 / 10;   /* a bit taller than 16/10, but shorter than square */
+    overflow: hidden;
+    background: #0f0f0f;
+    border-radius: 12px 12px 0 0;
+}
+
+.searchpage .sp-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.searchpage .sp-cover--ph {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #121212, #0f0f0f);
+}
+
+/* Kind badge (Beat / Pack / Kit) */
+.searchpage .sp-kind {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 9px !important;
+    font-weight: 600;
+    color: #fff;              /* force text white for contrast */
+    border: none;             /* cleaner look with solid bg */
+}
+
+/* Beat badge — firm teal */
+.searchpage .sp-kind--beat {
+    background-color: #009e94;
+}
+.searchpage .sp-kind--beat:hover {
+    background-color: #007b73;
+}
+
+/* Pack badge — firm darker teal */
+.searchpage .sp-kind--pack {
+    background-color: #007b73;
+}
+.searchpage .sp-kind--pack:hover {
+    background-color: #009e94;
+}
+
+/* Kit badge — firm neutral gray */
+.searchpage .sp-kind--kit {
+    background-color: #888;
+}
+.searchpage .sp-kind--kit:hover {
+    background-color: #555;
+}
+
+/* Body --------------------------------------------------------------- */
+.searchpage .sp-body {
+    padding: 10px;
+}
+
+.searchpage .sp-row {
+    display: flex;
+    align-items: baseline;   /* or 'center' if you prefer */
+    gap: 8px;
+    justify-content: flex-start;   /* was space-between */
+}
+
+.searchpage .sp-titlelink {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.searchpage .sp-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.searchpage .sp-sub {
+    color: #9aa0a6;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 3px;
+}
+
+/* Inline three-dots -------------------------------------------------- */
+.searchpage .sp-morewrap--inline {
+    position: relative;
+    flex: 0 0 auto;
+    z-index: var(--z-card-open);
+}
+
+.searchpage .sp-morebtn {
+    background: transparent;
+    color: #e0e0e0;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 10px;
+    line-height: 0;
+    transition: background .2s, border-color .2s, color .2s, transform .08s;
+}
+
+.searchpage .sp-morebtn svg {
+    fill: currentColor;
+}
+
+.searchpage .sp-morebtn:hover {
+    color: #009e94;
+}
+
+.searchpage .sp-morebtn:active {
+    transform: translateY(1px);
+}
+
+/* Dropdown menu ------------------------------------------------------ */
+.searchpage .sp-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    left: auto;
+    background: #121212;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 6px 0;
+    min-width: 190px;
+    z-index: var(--z-menu); /* stays below header/player bars */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
+}
+
+/* Optional: if you add .sp-menu--up via JS, it will flip upward */
+.searchpage .sp-menu.sp-menu--up {
+    top: auto;
+    bottom: calc(100% + 6px);
+}
+
+.searchpage .sp-menu button,
+.searchpage .sp-menu .moremenu__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 14px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: background .2s, color .2s, opacity .2s;
+}
+
+.searchpage .sp-menu button:hover,
+.searchpage .sp-menu .moremenu__item:hover {
+    background: #101010;
+    color: #fff;
+}
+
+.searchpage .sp-menu .moremenu__item:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* Price button ------------------------------------------------------- */
+.searchpage .sp-pricebtn {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto 10px;
+    padding: 10px 12px;
+    background: #009e94;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .2s, transform .08s;
+}
+
+.searchpage .sp-pricebtn:hover {
+    background: #007b73;
+}
+
+.searchpage .sp-pricebtn:active {
+    transform: scale(0.97);
+}
+
+/* Empty state -------------------------------------------------------- */
+.searchpage .sp-empty {
+    margin: 36px 0;
+    color: #bdbdbd;
+    text-align: center;
+}
+
+/* Responsive tweaks -------------------------------------------------- */
+@media (max-width: 640px) {
+    .searchpage .sp-bar {
+        gap: 10px;
+    }
+
+    .searchpage .sp-inputwrap {
+        flex-basis: 100%;
+    }
+}
+
+/* Optional extra density on wide screens ------------------------------ */
+@media (min-width: 1280px) {
+    .searchpage {
+        --card-min: 210px;
+    }
+
+    /* keep a touch denser on very wide screens */
+}
+
+.searchpage .sp-tags {
+
+    padding-left: 10px;          /* spacing from left edge */
+    padding-right: 10px;         /* balance on the right */
+}
+
+.searchpage .sp-tagrow {
+    display: flex;
+    flex-wrap: nowrap;           /* horizontal scroll like tp-tagrow */
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge */
+    padding-bottom: 2px;
+}
+
+.searchpage .sp-tagrow::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.searchpage .sp-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;                /* slightly shorter than tp-tag */
+    padding: 0 12px;
+    border-radius: 10px;
+    background: #1a1a1a;         /* firm dark background */
+    border: 1px solid #222;
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+    margin: 2px 4px;
+}
+
+.searchpage .sp-tag:hover {
+    background: #111;
+    border-color: #333;
+    transform: scale(0.98);
+}
+
+.searchpage .sp-tag--more {
+    background: #2a2a2a;
+    border-color: #333;
+    color: #bbb;
+}
+
+@media (max-width: 1400px) {
+    .searchpage .sp-card {
+        flex: 0 0 calc((100% - (4 * var(--gap))) / 5); /* 5 per row */
+        max-width: calc((100% - (4 * var(--gap))) / 5);
+    }
+}
+
+@media (max-width: 1200px) {
+    .searchpage .sp-card {
+        flex: 0 0 calc((100% - (3 * var(--gap))) / 4); /* 4 per row */
+        max-width: calc((100% - (3 * var(--gap))) / 4);
+    }
+}
+
+@media (max-width: 900px) {
+    .searchpage .sp-card {
+        flex: 0 0 calc((100% - (2 * var(--gap))) / 3); /* 3 per row */
+        max-width: calc((100% - (2 * var(--gap))) / 3);
+    }
+}
+
+@media (max-width: 600px) {
+    .searchpage .sp-card {
+        flex: 0 0 calc((100% - var(--gap)) / 2); /* 2 per row */
+        max-width: calc((100% - var(--gap)) / 2);
+    }
+}
+
+@media (max-width: 400px) {
+    .searchpage .sp-card {
+        flex: 0 0 100%; /* single column */
+        max-width: 100%;
+    }
+}
+
+.searchpage .sp-meta2 {
+    color: #b5b5b5;
+    font-size: 12.5px;
+    line-height: 1.25;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* === Card typography bump ===================================== */
+
+/* Title: 15px -> 17px */
+.searchpage .sp-title {
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+/* Artist/sub line: 13px -> 14.5px */
+.searchpage .sp-sub {
+    font-size: 14.5px;
+    line-height: 1.35;
+}
+
+/* Meta line (e.g., “Chicago drill · 145 BPM · 3:31”): 12.5 -> 13.5px */
+.searchpage .sp-meta2 {
+    font-size: 13.5px;
+    line-height: 1.35;
+}
+
+/* Tags: 0.85rem -> 0.92rem */
+.searchpage .sp-tag {
+    font-size: 0.92rem;
+}
+
+/* Price button label: 14px -> 15px */
+.searchpage .sp-pricebtn {
+    font-size: 15px;
+}
+/* --- SearchPage badge styles (parity with BrowsePage) --- */
+.searchpage .sp-row { align-items: flex-start; }
+
+.searchpage .sp-badges {
+    display: inline-flex;
+    gap: 6px;
+    align-items: baseline;      /* baseline like browse */
+    flex: 0 0 auto;
+    max-width: 55%;
+    overflow-x: auto;           /* horizontal scroll when crowded */
+    white-space: nowrap;
+    -ms-overflow-style: none;   /* IE/Edge */
+    scrollbar-width: none;      /* Firefox */
+}
+.searchpage .sp-badges::-webkit-scrollbar { display: none; }
+
+/* Base pill */
+.searchpage .sp-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25em 0.7em;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    border: 1px solid #222;
+    background: #101010;
+    color: #ddd;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .05s ease;
+    flex-shrink: 0;
+}
+.searchpage .sp-badge:hover { transform: scale(0.98); }
+
+/* Variants (mirrors .browse .tag--*) */
+.searchpage .sp-badge--new {
+    border-color: #009e94;
+    background: rgba(0, 158, 148, 0.15);
+    color: #009e94;
+}
+.searchpage .sp-badge--popular {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+}
+.searchpage .sp-badge--trending {
+    border-color: #9b59b6;
+    background: rgba(155, 89, 182, 0.15);
+    color: #9b59b6;
+}
+.searchpage .sp-badge--featured {
+    border-color: #f2c94c;
+    background: rgba(242, 201, 76, 0.18);
+    color: #f2c94c;
+}
+
+/* Tighten layout with title */
+.searchpage .sp-titlelink { min-width: 0; }
+.searchpage .sp-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1 1 auto;
+}
+
+.searchpage .sp-titlelink {
+    flex: 0 1 auto;          /* was 1 1 auto */
+    min-width: 0;
+}
+
+/* badges sit right after the title; don't grow */
+.searchpage .sp-badges {
+    flex: 0 0 auto;
+}
+
+/* push only the three-dots button to the far right */
+.searchpage .sp-morewrap--inline {
+    margin-left: auto;
+}
